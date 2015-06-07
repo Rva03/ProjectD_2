@@ -75,7 +75,7 @@ public class ProjectD {
 //        JPanel panel2 = new JPanel();
 //        panel2.setBackground(Color.yellow);
 //        Dimension panel2Size = new Dimension(800, 100);
-//        panel2.setPreferredSize(panel2Size);
+//        panel2.setPreferredSize(panel2Size); 
         
         frame.add(component);
         
