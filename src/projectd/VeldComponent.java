@@ -17,10 +17,7 @@ import java.lang.*;
  */
 public class VeldComponent extends JComponent {
 
-    private final int veldWidth = 40;
-    private final int veldHeight = 40;
-//    private int xPos = 0;
-//    private int yPos = 0;
+    private final int veldGrootte = 40;
     private ArrayList<Veld> velden;
     private int breed;
     private int hoog;
@@ -39,39 +36,28 @@ public class VeldComponent extends JComponent {
         
     }
     
-    
     @Override
     protected void paintComponent(Graphics g) {
-//        for(Veld v: velden){
-//            int plaats = 1;
-//            if (v.getClass().isInstance(muur)){
-//                g.setColor(Color.black);
-//                g.fillRect(plaats*hoog, plaats*breed, veldWidth, veldHeight);
-//            }
-//            else if (v.getClass().isInstance(loopveld)){
-//                g.setColor(Color.green);
-//                g.fillRect(plaats*hoog, plaats*breed, veldWidth, veldHeight);
-//            }
-//            plaats++;
-//        }
         
         for (Veld v : velden){
-            if (v.getClass().getSimpleName().equals("Muur")){
+            if (v instanceof RandMuur){
                 g.setColor(Color.black);
-                g.fillRect(v.getX()*40, v.getY()*40, veldWidth, veldHeight);
+                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
             }
-            else if (v.getClass().getSimpleName().equals("LoopVeld")){
+            else if (v instanceof NormaleMuur){
+                g.setColor(Color.darkGray);
+                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+            }
+            else if (v instanceof LoopVeld){
                 g.setColor(Color.green);
-                g.fillRect(v.getX()*40, v.getY()*40, veldWidth, veldHeight);
+                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
             }
-            //System.out.println(v.getClass().getSimpleName());
         }
         
         //teken karakter
         g.setColor(Color.blue);
         g.fillOval(karakter.getX(), karakter.getY(), 39, 39);
         
-        //g.fillRect((int)(Math.random()*100), (int)(Math.random()*100), (int)(Math.random()*100), (int)(Math.random()*100));
         
     }
     

@@ -19,9 +19,9 @@ public class ClickListener implements ActionListener {
     private JFrame frame;
     private JComponent panel;
     
-    public ClickListener(JFrame frame){
-        this.frame = frame;
-    }
+//    public ClickListener(JFrame frame){
+//        this.frame = frame;
+//    }
     
     public ClickListener(JComponent paneel, JFrame frame){
         panel = paneel;

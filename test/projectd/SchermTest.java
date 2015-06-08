@@ -23,7 +23,7 @@ public class SchermTest {
     
     
     private static ArrayList<Veld> velden = new ArrayList<Veld>();
-    private static Karakter k = new Karakter(40, 40);
+    //private static Karakter k = new Karakter(40, 40);
     private static VeldComponent component;
     private static Level level1;
     private static final int veldGrootte = 40;
@@ -48,7 +48,7 @@ public class SchermTest {
         int levelGrootte = 12;
         int levelNummer = 1;
         level1 = new Level(maze1, levelGrootte, levelNummer);
-        component = new VeldComponent(level1.getVelden(), level1.getGrootte(), k);
+        //component = new VeldComponent(level1.getVelden(), level1.getGrootte(), k);
     }
     
     @AfterClass
@@ -68,11 +68,10 @@ public class SchermTest {
      */
     @Test
     public void testUp() {
-        k.setY(2*veldGrootte);
-        Scherm instance = new Scherm(k, component, level1);
+        Karakter instance = new Karakter(veldGrootte, 2*veldGrootte, level1);
         instance.up();
         int expResult = 1*veldGrootte;
-        int result = k.getY();
+        int result = instance.getY();
         assertEquals(expResult, result);
     }
 
@@ -81,11 +80,10 @@ public class SchermTest {
      */
     @Test
     public void testDown() {
-        k.setY(2*veldGrootte);
-        Scherm instance = new Scherm(k, component, level1);
+        Karakter instance = new Karakter(veldGrootte, 2*veldGrootte, level1);
         instance.down();
         int expResult = 3*veldGrootte;
-        int result = k.getY();
+        int result = instance.getY();
         assertEquals(expResult, result);
     }
 
@@ -94,11 +92,10 @@ public class SchermTest {
      */
     @Test
     public void testRight() {
-        k.setX(2*veldGrootte);
-        Scherm instance = new Scherm(k, component, level1);
+        Karakter instance = new Karakter(2*veldGrootte, veldGrootte, level1);
         instance.right();
         int expResult = 3*veldGrootte;
-        int result = k.getX();
+        int result = instance.getX();
         assertEquals(expResult, result);
     }
 
@@ -107,11 +104,10 @@ public class SchermTest {
      */
     @Test
     public void testLeft() {
-        k.setX(2*veldGrootte);
-        Scherm instance = new Scherm(k, component, level1);
+        Karakter instance = new Karakter(2*veldGrootte, veldGrootte, level1);
         instance.left();
         int expResult = 1*veldGrootte;
-        int result = k.getX();
+        int result = instance.getX();
         assertEquals(expResult, result);
     }
 

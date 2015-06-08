@@ -40,16 +40,16 @@ public class ProjectD {
     
     public static void maakLevel1(){
         int[][] maze1 = { 
-            {1,1,1,1,1,1,1,1,1,1,1,1},
-            {1,0,1,0,1,0,1,0,0,0,0,1},
-            {1,0,1,0,0,0,1,0,1,1,0,1},
-            {1,0,0,0,1,1,1,0,0,0,0,1},
-            {1,0,1,0,0,0,0,0,1,1,0,1},
-            {1,0,1,0,1,1,1,0,1,0,0,1},
-            {1,0,1,0,1,0,0,0,0,1,0,1},
-            {1,0,1,0,1,1,1,0,1,1,0,1},
-            {1,0,0,0,0,0,0,0,0,1,0,1},
-            {1,1,1,1,1,1,1,1,1,1,1,1}
+            {2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,0,1,0,1,0,1,0,0,0,0,2},
+            {2,0,1,0,0,0,1,0,1,1,0,2},
+            {2,0,0,0,1,1,1,0,0,0,0,2},
+            {2,0,1,0,0,0,0,0,1,1,0,2},
+            {2,0,1,0,1,1,1,0,1,0,0,2},
+            {2,0,1,0,1,0,0,0,0,1,0,2},
+            {2,0,1,0,1,1,1,0,1,1,0,2},
+            {2,0,0,0,0,0,0,0,0,1,0,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2}
         };
         level1 = new Level(maze1, 12, 1);
         ArrayList<Veld> velden = level1.getVelden();
@@ -57,7 +57,7 @@ public class ProjectD {
     }
 
     private static void startLevel1() {
-        Karakter karakter = new Karakter(40, 40);
+        Karakter karakter = new Karakter(40, 40, level1);
         VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter);
         
         Scherm frame = new Scherm(karakter, component, level1);

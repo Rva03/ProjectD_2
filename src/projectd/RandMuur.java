@@ -9,10 +9,11 @@ package projectd;
  *
  * @author Robin
  */
-public class Muur extends Veld {
+public class RandMuur extends Muur {
     
-    
-    
-    
-    
+    public RandMuur(int x, int y){
+        setX(x);
+        setY(y);
+        
+    }
 }

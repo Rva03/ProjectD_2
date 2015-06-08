@@ -24,11 +24,14 @@ public class Level {
         levelNummer = nummer;
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < levelGrootte; j++) {
-                if (maze[i][j] == 0){
-                    velden.add(new LoopVeld(j, i));
+                if (maze[i][j] == 2){
+                    velden.add(new RandMuur(j, i));
                 }
-                else{
-                    velden.add(new Muur(j, i));
+                else if (maze[i][j] == 1){
+                    velden.add(new NormaleMuur(j, i));
+                }
+                else {
+                    velden.add(new LoopVeld(j, i));
                 }
             }
             
