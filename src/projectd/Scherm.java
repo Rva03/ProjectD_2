@@ -20,8 +20,8 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
     private Karakter karakter;
     private VeldComponent component;
     private Level level;
-    private ArrayList<Veld> velden;
-    private final int veldGrootte = 40;
+    //private ArrayList<Veld> velden;
+    //private final int veldGrootte = 40;
     
     public Scherm(Karakter k, VeldComponent vc, Level l){
         t.start();
@@ -31,7 +31,7 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
         karakter = k;
         component = vc;
         level = l;
-        velden = level.getVelden();
+        //velden = level.getVelden();
         
     }
     

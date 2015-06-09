@@ -80,8 +80,8 @@ public class ProjectD {
         frame.add(component);
         
         JButton startButton = new JButton("Level 1");
-        Dimension startButtonSize = new Dimension(100, 25);
-        startButton.setPreferredSize(startButtonSize);
+        //Dimension startButtonSize = new Dimension(100, 25);
+        //startButton.setPreferredSize(startButtonSize);
         frame.add(startButton, BorderLayout.NORTH);
         ClickListener listener = new ClickListener(component, frame);
         startButton.addActionListener(listener);
