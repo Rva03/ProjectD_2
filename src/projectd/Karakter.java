@@ -13,12 +13,14 @@ public class Karakter extends SpelObject {
     
     private final int veldGrootte = 40;
     private Level level;
+    private int score;
 
     
     public Karakter(int x, int y, Level l){
         setX(x);
         setY(y);
         level = l;
+        score = 0;
     }
     
     
