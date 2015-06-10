@@ -33,42 +33,8 @@ public class Doolhof {
     public static void main(String[] args) {
 
         maakLevels();
-        startscherm = new JFrame();
-        startscherm.setSize(750, 500);
-        startscherm.setTitle("Doolhof Spel");
-        startscherm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JButton start1Button = new JButton( new AbstractAction("Start level 1") {
-        @Override
-        public void actionPerformed( ActionEvent e ) {
-            startscherm.dispose();
-            startLevel1();
-        }
-        });
-        JButton start2Button = new JButton( new AbstractAction("Start level 2") {
-        @Override
-        public void actionPerformed( ActionEvent e ) {
-            startscherm.dispose();
-            startLevel2();
-        }
-        });
-        JButton start3Button = new JButton( new AbstractAction("Start level 3") {
-        @Override
-        public void actionPerformed( ActionEvent e ) {
-            startscherm.dispose();
-            startLevel3();
-        }
-        });
-        JPanel startpanel = new JPanel();
-        startpanel.setLayout(new BorderLayout());
-        JLabel titel = new JLabel("Het enige echte Doolhof-Doolhof spel!");
-        JLabel creators = new JLabel("Gemaakt door: Robin van Aalst");
-        startpanel.add(titel, BorderLayout.NORTH);
-        startpanel.add(start1Button, BorderLayout.WEST);
-        startpanel.add(start2Button, BorderLayout.CENTER);
-        startpanel.add(start3Button, BorderLayout.EAST);
-        startpanel.add(creators, BorderLayout.SOUTH);
-        startscherm.add(startpanel);
-        startscherm.setVisible(true);
+        showStart();
+        
         
     }
     
@@ -142,11 +108,11 @@ public class Doolhof {
         frame1.add(component);
         
         JButton startButton = new JButton( new AbstractAction("Start level 1 opnieuw") {
-        @Override
-        public void actionPerformed( ActionEvent e ) {
-            frame1.dispose();
-            startLevel1();
-        }
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                frame1.dispose();
+                startLevel1();
+            }
         });
         frame1.add(startButton, BorderLayout.NORTH);
         
@@ -166,11 +132,11 @@ public class Doolhof {
         frame2.add(component);
         
         JButton startButton = new JButton( new AbstractAction("Start level 2 opnieuw") {
-        @Override
-        public void actionPerformed( ActionEvent e ) {
-            frame2.dispose();
-            startLevel2();
-        }
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                frame2.dispose();
+                startLevel2();
+            }
         });
         frame2.add(startButton, BorderLayout.NORTH);
         
@@ -190,15 +156,54 @@ public class Doolhof {
         frame3.add(component);
         
         JButton startButton = new JButton( new AbstractAction("Start level 3 opnieuw") {
-        @Override
-        public void actionPerformed( ActionEvent e ) {
-            frame3.dispose();
-            startLevel3();
-        }
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                frame3.dispose();
+                startLevel3();
+            }
         });
         frame3.add(startButton, BorderLayout.NORTH);
         
         frame3.setVisible(true);
+    }
+
+    private static void showStart() {
+        startscherm = new JFrame();
+        startscherm.setSize(750, 500);
+        startscherm.setTitle("Doolhof Spel");
+        startscherm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JButton start1Button = new JButton( new AbstractAction("Start level 1") {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                startscherm.dispose();
+                startLevel1();
+            }
+        });
+        JButton start2Button = new JButton( new AbstractAction("Start level 2") {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                startscherm.dispose();
+                startLevel2();
+            }
+        });
+        JButton start3Button = new JButton( new AbstractAction("Start level 3") {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                startscherm.dispose();
+                startLevel3();
+            }
+        });
+        JPanel startpanel = new JPanel();
+        startpanel.setLayout(new BorderLayout());
+        JLabel titel = new JLabel("Het enige echte Doolhof-Doolhof spel!");
+        JLabel creators = new JLabel("Gemaakt door: Robin van Aalst");
+        startpanel.add(titel, BorderLayout.NORTH);
+        startpanel.add(start1Button, BorderLayout.WEST);
+        startpanel.add(start2Button, BorderLayout.CENTER);
+        startpanel.add(start3Button, BorderLayout.EAST);
+        startpanel.add(creators, BorderLayout.SOUTH);
+        startscherm.add(startpanel);
+        startscherm.setVisible(true);
     }
     
     
