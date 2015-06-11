@@ -16,4 +16,9 @@ public class NormaleMuur extends Muur {
         setY(y);
         
     }
+    
+    @Override
+    public boolean loopbaar(){
+        return false;
+    }
 }

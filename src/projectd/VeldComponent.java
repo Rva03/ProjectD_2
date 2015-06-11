@@ -43,6 +43,7 @@ public class VeldComponent extends JComponent {
     @Override
     public void paintComponent(Graphics g)
     {
+        Veld vriendVeld = new Veld();
         for (Veld[] veld : speelveld){
             for (Veld v : veld){
                 if (v instanceof RandMuur){
@@ -57,12 +58,21 @@ public class VeldComponent extends JComponent {
                     g.setColor(Color.green);
                     g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
                 }
+                if (v.getVriend() != null){
+                    vriendVeld = v;
+                }
             }
         }
+        
+        //Teken vriend
+        g.setColor(Color.white);
+        g.fillOval(vriendVeld.getX()*veldGrootte, vriendVeld.getY()*veldGrootte, 39, 39);
+        
         //Teken karakter
         g.setColor(Color.blue);
         g.fillOval(karakter.getHuidigVeld().getX()*veldGrootte, karakter.getHuidigVeld().getY()*veldGrootte, 39, 39);
-             
+        
+                  
     }
     
 //    @Override

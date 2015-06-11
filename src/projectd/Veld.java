@@ -20,7 +20,37 @@ public class Veld {
     private Karakter karakter;
     private SpelObject spelobject;
     private Vriend vriend;
-    private static final int veldGrootte = 40;
+    private Veld buurBoven;
+    private Veld buurOnder;
+    private Veld buurRechts;
+    private Veld buurLinks;
+    
+    public Veld getBuur(String richting){
+        Veld[][] speelveld = Level.getLevelSpeelveld();
+        if (richting.equals("boven")){
+            buurBoven = speelveld[yPos-1][xPos];
+            return buurBoven;
+        }
+        else if (richting.equals("onder")){
+            buurOnder = speelveld[yPos+1][xPos];
+            return buurOnder;
+        }
+        else if (richting.equals("rechts")){
+            buurRechts = speelveld[yPos][xPos+1];
+            return buurRechts;
+        }
+        else if (richting.equals("links")){
+            buurLinks = speelveld[yPos][xPos-1];
+            return buurLinks;
+        }
+        else {
+            return this;
+        }
+    }
+    
+    public boolean loopbaar(){
+        return false;
+    }
     
     public void setKarakter(Karakter k){
         karakter = k;
@@ -44,6 +74,14 @@ public class Veld {
     
     public int getY(){
         return yPos;
+    }
+
+    public void setVriend(Vriend v) {
+        vriend = v;
+    }
+    
+    public Vriend getVriend(){
+        return vriend;
     }
     
 }

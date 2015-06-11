@@ -16,4 +16,9 @@ public class LoopVeld extends Veld {
         setY(y);
     }
     
+    @Override
+    public boolean loopbaar(){
+        return true;
+    }
+    
 }

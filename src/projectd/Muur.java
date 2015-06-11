@@ -12,7 +12,10 @@ package projectd;
 public class Muur extends Veld {
     
     
-    
+    @Override
+    public boolean loopbaar(){
+        return false;
+    }
     
     
 }

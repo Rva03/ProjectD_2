@@ -32,7 +32,7 @@ public class Doolhof {
     
     public static void main(String[] args) {
 
-        maakLevels();
+        //maakLevels();
         showStart();
         
         
@@ -96,12 +96,15 @@ public class Doolhof {
     }
 
     private static void startLevel1() {
+        maakLevel1();
         //Karakter karakter = new Karakter(40, 40, level1);
         //Vriend vriend = new Vriend(400, 320);
         //VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter, vriend);
         Karakter karakter = new Karakter(level1);
         Veld[][] speelveld = level1.getSpeelveld();
         karakter.setHuidigVeld(speelveld[1][1]);
+        Vriend vriend = new Vriend();
+        speelveld[8][10].setVriend(vriend);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -126,9 +129,17 @@ public class Doolhof {
     }
     
     private static void startLevel2() {
-        Karakter karakter = new Karakter(40, 40, level2);
-        Vriend vriend = new Vriend(400, 320);
-        VeldComponent component = new VeldComponent(level2.getVelden(), level2.getGrootte(), karakter, vriend);
+        maakLevel2();
+//        Karakter karakter = new Karakter(40, 40, level2);
+//        Vriend vriend = new Vriend(400, 320);
+//        VeldComponent component = new VeldComponent(level2.getVelden(), level2.getGrootte(), karakter, vriend);
+        Karakter karakter = new Karakter(level2);
+        Veld[][] speelveld = level2.getSpeelveld();
+        karakter.setHuidigVeld(speelveld[1][1]);
+        Vriend vriend = new Vriend();
+        speelveld[8][10].setVriend(vriend);
+        
+        VeldComponent component = new VeldComponent(speelveld, karakter);
         
         frame2 = new Scherm(karakter, component, level2);
         frame2.setSize(750, 500);
@@ -151,9 +162,17 @@ public class Doolhof {
     }
     
     private static void startLevel3() {
-        Karakter karakter = new Karakter(40, 40, level3);
-        Vriend vriend = new Vriend(400, 320);
-        VeldComponent component = new VeldComponent(level3.getVelden(), level3.getGrootte(), karakter, vriend);
+        maakLevel3();
+//        Karakter karakter = new Karakter(40, 40, level3);
+//        Vriend vriend = new Vriend(400, 320);
+//        VeldComponent component = new VeldComponent(level3.getVelden(), level3.getGrootte(), karakter, vriend);
+        Karakter karakter = new Karakter(level3);
+        Veld[][] speelveld = level3.getSpeelveld();
+        karakter.setHuidigVeld(speelveld[1][1]);
+        Vriend vriend = new Vriend();
+        speelveld[8][10].setVriend(vriend);
+        
+        VeldComponent component = new VeldComponent(speelveld, karakter);
         
         frame3 = new Scherm(karakter, component, level3);
         frame3.setSize(750, 500);

@@ -5,15 +5,21 @@
  */
 package projectd;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Robin
  */
 public class Vriend extends SpelObject {
     
-    public Vriend(int x, int y){
-        setX(x);
-        setY(y);
+    public Vriend(){
+        
+    }
+    
+    public void doAction(){
+        System.out.println("U heeft gewonnen!");
+        JOptionPane.showMessageDialog(null, "Level gehaald!");
     }
     
     

@@ -20,7 +20,7 @@ public class Level extends JPanel{
     private int levelGrootte;
     private int levelNummer;
     private ArrayList<Veld> velden = new ArrayList<Veld>();
-    private Veld[][] speelveld;
+    private static Veld[][] speelveld;
     
     public Level(int[][] maze, int groot, int nummer) {
         levelGrootte = groot;
@@ -51,6 +51,10 @@ public class Level extends JPanel{
         }
         
         
+    }
+    
+    public static Veld[][] getLevelSpeelveld(){
+        return speelveld;
     }
     
     public ArrayList<Veld> getVelden(){

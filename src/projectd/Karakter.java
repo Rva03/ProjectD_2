@@ -41,35 +41,48 @@ public class Karakter extends SpelObject {
     }
     
     public void goDown(){
-        huidigVeld.setKarakter(null);
-        speelveld = level.getSpeelveld();
-        Veld v = huidigVeld;
-        huidigVeld = speelveld[v.getY()+1][v.getX()];
-        
+        if (huidigVeld.getBuur("onder").loopbaar()){
+            huidigVeld.setKarakter(null);
+            speelveld = level.getSpeelveld();
+            Veld v = huidigVeld;
+            huidigVeld = speelveld[v.getY()+1][v.getX()];
+        }
     }
     
     public void goUp(){
-        huidigVeld.setKarakter(null);
-        speelveld = level.getSpeelveld();
-        Veld v = huidigVeld;
-        huidigVeld = speelveld[v.getY()-1][v.getX()];
-        
+        if (huidigVeld.getBuur("boven").loopbaar()){
+            huidigVeld.setKarakter(null);
+            speelveld = level.getSpeelveld();
+            Veld v = huidigVeld;
+            huidigVeld = speelveld[v.getY()-1][v.getX()];
+        }
     }
     
     public void goRight(){
-        huidigVeld.setKarakter(null);
-        speelveld = level.getSpeelveld();
-        Veld v = huidigVeld;
-        huidigVeld = speelveld[v.getY()][v.getX()+1];
-        
+        if (huidigVeld.getBuur("rechts").loopbaar()){
+            huidigVeld.setKarakter(null);
+            speelveld = level.getSpeelveld();
+            Veld v = huidigVeld;
+            huidigVeld = speelveld[v.getY()][v.getX()+1];
+        }
     }
     
     public void goLeft(){
-        huidigVeld.setKarakter(null);
-        speelveld = level.getSpeelveld();
-        Veld v = huidigVeld;
-        huidigVeld = speelveld[v.getY()][v.getX()-1];
-        
+        if (huidigVeld.getBuur("links").loopbaar()){
+            huidigVeld.setKarakter(null);
+            speelveld = level.getSpeelveld();
+            Veld v = huidigVeld;
+            huidigVeld = speelveld[v.getY()][v.getX()-1];
+        }
+    }
+    
+    public void checkVoorVriend(){
+        if (huidigVeld.getVriend() == null){
+            System.out.println("geen vriend op dit veld");
+        }
+        else{
+            huidigVeld.getVriend().doAction();
+        }
     }
     
     

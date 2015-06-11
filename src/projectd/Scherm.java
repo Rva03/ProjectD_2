@@ -46,15 +46,19 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_UP){
             karakter.goUp();
+            karakter.checkVoorVriend();
         }
         if (code == KeyEvent.VK_DOWN){
             karakter.goDown();
+            karakter.checkVoorVriend();
         }
         if (code == KeyEvent.VK_RIGHT){
             karakter.goRight();
+            karakter.checkVoorVriend();
         }
         if (code == KeyEvent.VK_LEFT){
             karakter.goLeft();
+            karakter.checkVoorVriend();
         }
     }
 

@@ -16,4 +16,9 @@ public class RandMuur extends Muur {
         setY(y);
         
     }
+    
+    @Override
+    public boolean loopbaar(){
+        return false;
+    }
 }

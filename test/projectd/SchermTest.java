@@ -69,7 +69,7 @@ public class SchermTest {
     @Test
     public void testUp() {
         Karakter instance = new Karakter(veldGrootte, 2*veldGrootte, level1);
-        instance.up();
+        instance.goUp();
         int expResult = 1*veldGrootte;
         int result = instance.getY();
         assertEquals(expResult, result);
@@ -81,7 +81,7 @@ public class SchermTest {
     @Test
     public void testDown() {
         Karakter instance = new Karakter(veldGrootte, 2*veldGrootte, level1);
-        instance.down();
+        instance.goDown();
         int expResult = 3*veldGrootte;
         int result = instance.getY();
         assertEquals(expResult, result);
@@ -93,7 +93,7 @@ public class SchermTest {
     @Test
     public void testRight() {
         Karakter instance = new Karakter(2*veldGrootte, veldGrootte, level1);
-        instance.right();
+        instance.goRight();
         int expResult = 3*veldGrootte;
         int result = instance.getX();
         assertEquals(expResult, result);
@@ -105,7 +105,7 @@ public class SchermTest {
     @Test
     public void testLeft() {
         Karakter instance = new Karakter(2*veldGrootte, veldGrootte, level1);
-        instance.left();
+        instance.goLeft();
         int expResult = 1*veldGrootte;
         int result = instance.getX();
         assertEquals(expResult, result);
