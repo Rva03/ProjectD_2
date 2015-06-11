@@ -5,6 +5,8 @@
  */
 package projectd;
 
+import java.awt.Rectangle;
+
 /**
  *
  * @author Robin
@@ -48,5 +50,10 @@ public class Karakter extends SpelObject {
             super.setX(super.getX()-veldGrootte);
         }
     }
+    
+    public boolean checkCollision(Vriend v){
+        return false;
+    }
+    
     
 }

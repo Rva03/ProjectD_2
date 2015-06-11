@@ -9,6 +9,12 @@ package projectd;
  *
  * @author Robin
  */
-public class Vriend {
+public class Vriend extends SpelObject {
+    
+    public Vriend(int x, int y){
+        setX(x);
+        setY(y);
+    }
+    
     
 }

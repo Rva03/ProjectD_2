@@ -22,14 +22,16 @@ public class VeldComponent extends JComponent {
     private int breed;
     private int hoog;
     private Karakter karakter;
+    private Vriend vriend;
     
     
     
-    public VeldComponent(ArrayList<Veld> veld, int groot, Karakter k){
+    public VeldComponent(ArrayList<Veld> veld, int groot, Karakter k, Vriend v){
         velden = veld;
         breed = groot;
         hoog = (velden.size()/groot);
         karakter = k;
+        vriend = v;
     }
     
     public VeldComponent(){
@@ -54,7 +56,11 @@ public class VeldComponent extends JComponent {
             }
         }
         
-        //teken karakter
+        //Teken vriend
+        g.setColor(Color.WHITE);
+        g.fillOval(vriend.getX(), vriend.getY(), 39, 39);
+        
+        //Teken karakter
         g.setColor(Color.blue);
         g.fillOval(karakter.getX(), karakter.getY(), 39, 39);
         

@@ -97,7 +97,8 @@ public class Doolhof {
 
     private static void startLevel1() {
         Karakter karakter = new Karakter(40, 40, level1);
-        VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter);
+        Vriend vriend = new Vriend(400, 320);
+        VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter, vriend);
         
         frame1 = new Scherm(karakter, component, level1);
         frame1.setSize(750, 500);
@@ -121,7 +122,8 @@ public class Doolhof {
     
     private static void startLevel2() {
         Karakter karakter = new Karakter(40, 40, level2);
-        VeldComponent component = new VeldComponent(level2.getVelden(), level2.getGrootte(), karakter);
+        Vriend vriend = new Vriend(400, 320);
+        VeldComponent component = new VeldComponent(level2.getVelden(), level2.getGrootte(), karakter, vriend);
         
         frame2 = new Scherm(karakter, component, level2);
         frame2.setSize(750, 500);
@@ -145,7 +147,8 @@ public class Doolhof {
     
     private static void startLevel3() {
         Karakter karakter = new Karakter(40, 40, level3);
-        VeldComponent component = new VeldComponent(level3.getVelden(), level3.getGrootte(), karakter);
+        Vriend vriend = new Vriend(400, 320);
+        VeldComponent component = new VeldComponent(level3.getVelden(), level3.getGrootte(), karakter, vriend);
         
         frame3 = new Scherm(karakter, component, level3);
         frame3.setSize(750, 500);
