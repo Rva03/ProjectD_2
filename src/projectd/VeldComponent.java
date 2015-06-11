@@ -23,6 +23,7 @@ public class VeldComponent extends JComponent {
     private int hoog;
     private Karakter karakter;
     private Vriend vriend;
+    private Veld[][] speelveld;
     
     
     
@@ -34,38 +35,64 @@ public class VeldComponent extends JComponent {
         vriend = v;
     }
     
-    public VeldComponent(){
-        
+    public VeldComponent(Veld[][] speelvelden, Karakter k){
+        speelveld = speelvelden;
+        karakter = k;
     }
     
     @Override
-    protected void paintComponent(Graphics g) {
-        
-        for (Veld v : velden){
-            if (v instanceof RandMuur){
-                g.setColor(Color.black);
-                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
-            }
-            else if (v instanceof NormaleMuur){
-                g.setColor(Color.darkGray);
-                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
-            }
-            else if (v instanceof LoopVeld){
-                g.setColor(Color.green);
-                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+    public void paintComponent(Graphics g)
+    {
+        for (Veld[] veld : speelveld){
+            for (Veld v : veld){
+                if (v instanceof RandMuur){
+                    g.setColor(Color.black);
+                    g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+                }
+                else if (v instanceof NormaleMuur){
+                    g.setColor(Color.darkGray);
+                    g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+                }
+                else if (v instanceof LoopVeld){
+                    g.setColor(Color.green);
+                    g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+                }
             }
         }
-        
-        //Teken vriend
-        g.setColor(Color.WHITE);
-        g.fillOval(vriend.getX(), vriend.getY(), 39, 39);
-        
         //Teken karakter
         g.setColor(Color.blue);
-        g.fillOval(karakter.getX(), karakter.getY(), 39, 39);
-        
-        
+        g.fillOval(karakter.getHuidigVeld().getX()*veldGrootte, karakter.getHuidigVeld().getY()*veldGrootte, 39, 39);
+             
     }
+    
+//    @Override
+//    protected void paintComponent(Graphics g) {
+//        
+//        for (Veld v : velden){
+//            if (v instanceof RandMuur){
+//                g.setColor(Color.black);
+//                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+//            }
+//            else if (v instanceof NormaleMuur){
+//                g.setColor(Color.darkGray);
+//                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+//            }
+//            else if (v instanceof LoopVeld){
+//                g.setColor(Color.green);
+//                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+//            }
+//        }
+//        
+//        //Teken vriend
+//        g.setColor(Color.WHITE);
+//        g.fillOval(vriend.getX(), vriend.getY(), 39, 39);
+//        
+//        //Teken karakter
+//        g.setColor(Color.blue);
+//        g.fillOval(karakter.getX(), karakter.getY(), 39, 39);
+//        
+//        
+//    }
     
     
     

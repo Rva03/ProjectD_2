@@ -45,16 +45,16 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_UP){
-            karakter.up();
+            karakter.goUp();
         }
         if (code == KeyEvent.VK_DOWN){
-            karakter.down();
+            karakter.goDown();
         }
         if (code == KeyEvent.VK_RIGHT){
-            karakter.right();
+            karakter.goRight();
         }
         if (code == KeyEvent.VK_LEFT){
-            karakter.left();
+            karakter.goLeft();
         }
     }
 
@@ -63,30 +63,5 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
         component.repaint();
     }
 
-    
-//    public void up(){
-//        Veld v = velden.get(((karakter.getY()/veldGrootte)*level.getGrootte()) + (karakter.getX()/veldGrootte) - level.getGrootte());
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            karakter.setY(karakter.getY()-veldGrootte);
-//        }
-//    }
-//    public void down(){
-//        Veld v = velden.get(((karakter.getY()/veldGrootte)*level.getGrootte()) + (karakter.getX()/veldGrootte) + level.getGrootte());
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            karakter.setY(karakter.getY()+veldGrootte);
-//        }
-//    }
-//    public void right(){
-//        Veld v = velden.get(((karakter.getY()/veldGrootte)*level.getGrootte()) + (karakter.getX()/veldGrootte) + 1);
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            karakter.setX(karakter.getX()+veldGrootte);
-//        }
-//    }
-//    public void left(){
-//        Veld v = velden.get(((karakter.getY()/veldGrootte)*level.getGrootte()) + (karakter.getX()/veldGrootte) - 1);
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            karakter.setX(karakter.getX()-veldGrootte);
-//        }
-//    }
     
 }

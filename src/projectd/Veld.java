@@ -5,6 +5,10 @@
  */
 package projectd;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JComponent;
+
 /**
  *
  * @author Robin
@@ -13,6 +17,18 @@ public class Veld {
     
     private int xPos;
     private int yPos;
+    private Karakter karakter;
+    private SpelObject spelobject;
+    private Vriend vriend;
+    private static final int veldGrootte = 40;
+    
+    public void setKarakter(Karakter k){
+        karakter = k;
+    }
+    
+    public Karakter getKarakter(){
+        return karakter;
+    }
     
     public void setX(int x){
         xPos = x;

@@ -96,9 +96,14 @@ public class Doolhof {
     }
 
     private static void startLevel1() {
-        Karakter karakter = new Karakter(40, 40, level1);
-        Vriend vriend = new Vriend(400, 320);
-        VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter, vriend);
+        //Karakter karakter = new Karakter(40, 40, level1);
+        //Vriend vriend = new Vriend(400, 320);
+        //VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter, vriend);
+        Karakter karakter = new Karakter(level1);
+        Veld[][] speelveld = level1.getSpeelveld();
+        karakter.setHuidigVeld(speelveld[1][1]);
+        
+        VeldComponent component = new VeldComponent(speelveld, karakter);
         
         frame1 = new Scherm(karakter, component, level1);
         frame1.setSize(750, 500);

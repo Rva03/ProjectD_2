@@ -5,21 +5,24 @@
  */
 package projectd;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Robin
  */
-public class Level {
+public class Level extends JPanel{
 
     private int levelGrootte;
     private int levelNummer;
     private ArrayList<Veld> velden = new ArrayList<Veld>();
+    private Veld[][] speelveld;
     
-    
-    
-    Level(int[][] maze, int groot, int nummer) {
+    public Level(int[][] maze, int groot, int nummer) {
         levelGrootte = groot;
         levelNummer = nummer;
         for (int i = 0; i < maze.length; i++) {
@@ -36,12 +39,27 @@ public class Level {
             }
             
         }
+        speelveld = new Veld[velden.size()/levelGrootte][levelGrootte];
+        int i;
+        int j;
+        int teller = 0;
+        for (i = 0;  i < (velden.size()/levelGrootte); i++) {
+            for (j = 0;  j < levelGrootte; j++) {
+                speelveld[i][j] = velden.get(teller);
+                teller++;
+            }
+        }
+        
         
     }
     
     public ArrayList<Veld> getVelden(){
         
         return velden;
+    }
+    
+    public Veld[][] getSpeelveld(){
+        return speelveld;
     }
     
     public int getGrootte(){
