@@ -104,7 +104,7 @@ public class Doolhof {
         Veld[][] speelveld = level1.getSpeelveld();
         karakter.setHuidigVeld(speelveld[1][1]);
         Vriend vriend = new Vriend();
-        speelveld[8][10].setVriend(vriend);
+        speelveld[8][10].setSpelObject(vriend);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -137,7 +137,7 @@ public class Doolhof {
         Veld[][] speelveld = level2.getSpeelveld();
         karakter.setHuidigVeld(speelveld[1][1]);
         Vriend vriend = new Vriend();
-        speelveld[8][10].setVriend(vriend);
+        speelveld[8][10].setSpelObject(vriend);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -170,7 +170,7 @@ public class Doolhof {
         Veld[][] speelveld = level3.getSpeelveld();
         karakter.setHuidigVeld(speelveld[1][1]);
         Vriend vriend = new Vriend();
-        speelveld[8][10].setVriend(vriend);
+        speelveld[8][10].setSpelObject(vriend);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         

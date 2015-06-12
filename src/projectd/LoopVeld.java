@@ -11,6 +11,7 @@ package projectd;
  */
 public class LoopVeld extends Veld {
     
+    
     public LoopVeld(int x, int y){
         setX(x);
         setY(y);
@@ -20,5 +21,6 @@ public class LoopVeld extends Veld {
     public boolean loopbaar(){
         return true;
     }
+    
     
 }

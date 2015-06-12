@@ -11,23 +11,13 @@ package projectd;
  */
 public class SpelObject {
     
-    private int xPos;
-    private int yPos;
     
-    public void setX(int x){
-        xPos = x;
+    public void verdwijn(){
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public int getX(){
-        return xPos;
-    }
-    
-    public void setY(int y){
-        yPos = y;
-    }
-    
-    public int getY(){
-        return yPos;
+
+    public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

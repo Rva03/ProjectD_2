@@ -58,7 +58,7 @@ public class VeldComponent extends JComponent {
                     g.setColor(Color.green);
                     g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
                 }
-                if (v.getVriend() != null){
+                if (v.getSpelObject() instanceof Vriend){
                     vriendVeld = v;
                 }
             }

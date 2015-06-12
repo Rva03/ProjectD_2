@@ -19,7 +19,6 @@ public class Veld {
     private int yPos;
     private Karakter karakter;
     private SpelObject spelobject;
-    private Vriend vriend;
     private Veld buurBoven;
     private Veld buurOnder;
     private Veld buurRechts;
@@ -76,12 +75,12 @@ public class Veld {
         return yPos;
     }
 
-    public void setVriend(Vriend v) {
-        vriend = v;
+    public void setSpelObject(SpelObject obj) {
+        spelobject = obj;
     }
     
-    public Vriend getVriend(){
-        return vriend;
+    public SpelObject getSpelObject(){
+        return spelobject;
     }
     
 }

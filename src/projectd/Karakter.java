@@ -13,22 +13,17 @@ import java.awt.Rectangle;
  */
 public class Karakter extends SpelObject {
     
-    private final int veldGrootte = 40;
     private Level level;
     private int score;
     private Veld huidigVeld;
     private Veld[][] speelveld;
+    private int snelheid;
 
-    
-    public Karakter(int x, int y, Level l){
-        setX(x);
-        setY(y);
-        level = l;
-        score = 0;
-    }
     
     public Karakter(Level l){
         level = l;
+        score = 0;
+        speelveld = level.getSpeelveld();
     }
     
     public void setHuidigVeld(Veld v){
@@ -43,7 +38,7 @@ public class Karakter extends SpelObject {
     public void goDown(){
         if (huidigVeld.getBuur("onder").loopbaar()){
             huidigVeld.setKarakter(null);
-            speelveld = level.getSpeelveld();
+            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()+1][v.getX()];
         }
@@ -52,7 +47,7 @@ public class Karakter extends SpelObject {
     public void goUp(){
         if (huidigVeld.getBuur("boven").loopbaar()){
             huidigVeld.setKarakter(null);
-            speelveld = level.getSpeelveld();
+            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()-1][v.getX()];
         }
@@ -61,7 +56,7 @@ public class Karakter extends SpelObject {
     public void goRight(){
         if (huidigVeld.getBuur("rechts").loopbaar()){
             huidigVeld.setKarakter(null);
-            speelveld = level.getSpeelveld();
+            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()][v.getX()+1];
         }
@@ -70,18 +65,18 @@ public class Karakter extends SpelObject {
     public void goLeft(){
         if (huidigVeld.getBuur("links").loopbaar()){
             huidigVeld.setKarakter(null);
-            speelveld = level.getSpeelveld();
+            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()][v.getX()-1];
         }
     }
     
-    public void checkVoorVriend(){
-        if (huidigVeld.getVriend() == null){
+    public void checkVoorSpelobject(){
+        if (huidigVeld.getSpelObject()== null){
             System.out.println("geen vriend op dit veld");
         }
         else{
-            huidigVeld.getVriend().doAction();
+            huidigVeld.getSpelObject().doAction();
         }
     }
     
