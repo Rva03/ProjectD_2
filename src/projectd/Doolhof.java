@@ -71,7 +71,7 @@ public class Doolhof {
             {2,0,1,0,1,1,1,0,1,1,0,2},
             {2,0,1,0,1,0,0,0,0,0,0,2},
             {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,0,0,0,0,0,0,0,1,0,2},
+            {2,0,0,0,1,0,0,0,0,1,0,2},
             {2,2,2,2,2,2,2,2,2,2,2,2}
         };
         level2 = new Level(maze1, 12, 2);
@@ -88,7 +88,7 @@ public class Doolhof {
             {2,0,1,0,1,1,1,0,1,0,0,2},
             {2,0,1,1,1,0,0,0,0,1,0,2},
             {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,0,0,0,0,0,0,0,1,0,2},
+            {2,0,1,0,0,0,0,0,0,1,0,2},
             {2,2,2,2,2,2,2,2,2,2,2,2}
         };
         level3 = new Level(maze1, 12, 3);
@@ -140,6 +140,8 @@ public class Doolhof {
         karakter.setHuidigVeld(speelveld[1][1]);
         Vriend vriend = new Vriend();
         speelveld[8][10].setSpelObject(vriend);
+        Bazooka bazooka = new Bazooka();
+        speelveld[5][1].setSpelObject(bazooka);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -173,6 +175,8 @@ public class Doolhof {
         karakter.setHuidigVeld(speelveld[1][1]);
         Vriend vriend = new Vriend();
         speelveld[8][10].setSpelObject(vriend);
+        Bazooka bazooka = new Bazooka();
+        speelveld[5][1].setSpelObject(bazooka);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
