@@ -114,7 +114,7 @@ public class Doolhof {
         frame1.setSize(750, 500);
         frame1.setTitle("Doolhof Spel");
         frame1.setLayout(new BorderLayout());
-        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         frame1.add(component);
         
@@ -149,7 +149,7 @@ public class Doolhof {
         frame2.setSize(750, 500);
         frame2.setTitle("Doolhof Spel");
         frame2.setLayout(new BorderLayout());
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         frame2.add(component);
         
@@ -184,7 +184,7 @@ public class Doolhof {
         frame3.setSize(750, 500);
         frame3.setTitle("Doolhof Spel");
         frame3.setLayout(new BorderLayout());
-        frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         frame3.add(component);
         
@@ -208,21 +208,21 @@ public class Doolhof {
         JButton start1Button = new JButton( new AbstractAction("Start level 1") {
             @Override
             public void actionPerformed( ActionEvent e ) {
-                startscherm.dispose();
+                //startscherm.dispose();
                 startLevel1();
             }
         });
         JButton start2Button = new JButton( new AbstractAction("Start level 2") {
             @Override
             public void actionPerformed( ActionEvent e ) {
-                startscherm.dispose();
+                //startscherm.dispose();
                 startLevel2();
             }
         });
         JButton start3Button = new JButton( new AbstractAction("Start level 3") {
             @Override
             public void actionPerformed( ActionEvent e ) {
-                startscherm.dispose();
+                //startscherm.dispose();
                 startLevel3();
             }
         });
