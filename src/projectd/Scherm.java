@@ -60,6 +60,10 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
             karakter.goLeft();
             karakter.checkVoorSpelobject();
         }
+        if (code == KeyEvent.VK_SPACE){
+            karakter.schiet();
+        }
+        
     }
 
     @Override

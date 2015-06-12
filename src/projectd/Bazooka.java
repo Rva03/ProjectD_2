@@ -9,6 +9,19 @@ package projectd;
  *
  * @author Robin
  */
-public class Bazooka {
+public class Bazooka extends SpelObject{
+    
+    public Bazooka(){
+        
+    }
+    
+    @Override
+    public void doAction(){
+        System.out.println("ik ben een bazooka");
+    }
+    
+    public void schiet(){
+        System.out.println("ik heb geschoten");
+    }
     
 }

@@ -19,7 +19,7 @@ public class Vriend extends SpelObject {
     
     public void doAction(){
         System.out.println("U heeft gewonnen!");
-        JOptionPane.showMessageDialog(null, "Level gehaald!");
+        JOptionPane.showMessageDialog(null, "Level gehaald!");  
     }
     
     

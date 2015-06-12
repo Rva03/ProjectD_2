@@ -18,6 +18,7 @@ public class Karakter extends SpelObject {
     private Veld huidigVeld;
     private Veld[][] speelveld;
     private int snelheid;
+    private Bazooka bazooka = null;
 
     
     public Karakter(Level l){
@@ -33,6 +34,12 @@ public class Karakter extends SpelObject {
     
     public Veld getHuidigVeld(){
         return huidigVeld;
+    }
+    
+    public void schiet(){
+        if (bazooka != null){
+            bazooka.schiet();
+        }
     }
     
     public void goDown(){
@@ -73,11 +80,19 @@ public class Karakter extends SpelObject {
     
     public void checkVoorSpelobject(){
         if (huidigVeld.getSpelObject()== null){
-            System.out.println("geen vriend op dit veld");
+            System.out.println("geen object op dit veld");
+        }
+        else if (huidigVeld.getSpelObject() instanceof Bazooka){
+            bazooka = (Bazooka) huidigVeld.getSpelObject();
+            huidigVeld.setSpelObject(null);
         }
         else{
             huidigVeld.getSpelObject().doAction();
         }
+    }
+    
+    public Bazooka getBazooka(){
+        return bazooka;
     }
     
     
@@ -108,9 +123,7 @@ public class Karakter extends SpelObject {
 //        }
 //    }
     
-    public boolean checkCollision(Vriend v){
-        return false;
-    }
+    
     
     
 }

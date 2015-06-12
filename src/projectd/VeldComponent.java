@@ -44,6 +44,7 @@ public class VeldComponent extends JComponent {
     public void paintComponent(Graphics g)
     {
         Veld vriendVeld = new Veld();
+        Veld bazookaVeld = new Veld();
         for (Veld[] veld : speelveld){
             for (Veld v : veld){
                 if (v instanceof RandMuur){
@@ -61,6 +62,13 @@ public class VeldComponent extends JComponent {
                 if (v.getSpelObject() instanceof Vriend){
                     vriendVeld = v;
                 }
+                else if (v.getSpelObject() instanceof Bazooka){
+                    bazookaVeld = v;
+                }
+                if (karakter.getBazooka() != null){
+                    bazookaVeld = karakter.getHuidigVeld();
+                }
+                    
             }
         }
         
@@ -71,6 +79,10 @@ public class VeldComponent extends JComponent {
         //Teken karakter
         g.setColor(Color.blue);
         g.fillOval(karakter.getHuidigVeld().getX()*veldGrootte, karakter.getHuidigVeld().getY()*veldGrootte, 39, 39);
+        
+        //Teken bazooka
+        g.setColor(Color.red);
+        g.fillRect(bazookaVeld.getX()*veldGrootte+5, bazookaVeld.getY()*veldGrootte+12, 30, 16);
         
                   
     }
