@@ -14,10 +14,15 @@ import java.awt.Graphics;
  */
 public class RandMuur extends Muur {
     
-    public RandMuur(int x, int y){
+    public RandMuur(int x, int y, Level l){
         setX(x);
         setY(y);
-        
+        setLevel(l);
+    }
+    
+    @Override
+    public boolean shootable(){
+        return false;
     }
     
     @Override
@@ -28,6 +33,6 @@ public class RandMuur extends Muur {
     @Override
     public void tekenJezelf(Graphics g){
         g.setColor(Color.black);
-        g.fillRect(getX()*40, getY()*40, 40, 40);
+        g.fillRect(getX()*getVeldgrootte(), getY()*getVeldgrootte(), getVeldgrootte(), getVeldgrootte());
     }
 }

@@ -23,9 +23,23 @@ public class Veld {
     private Veld buurOnder;
     private Veld buurRechts;
     private Veld buurLinks;
+    private Level level;
+    private final int veldGrootte = 40;
+
+    
+    public Veld(){
+    }
+    
+    public Level getLevel(){
+        return level;
+    }
+    
+    public void setLevel(Level l){
+        level = l;
+    }
     
     public Veld getBuur(String richting){
-        Veld[][] speelveld = Level.getLevelSpeelveld();
+        Veld[][] speelveld = this.getLevel().getSpeelveld();
         if (richting.equals("boven")){
             buurBoven = speelveld[yPos-1][xPos];
             return buurBoven;
@@ -48,6 +62,10 @@ public class Veld {
     }
     
     public boolean loopbaar(){
+        return false;
+    }
+    
+    public boolean shootable(){
         return false;
     }
     
@@ -85,6 +103,10 @@ public class Veld {
     
     public void tekenJezelf(Graphics g){
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public int getVeldgrootte(){
+        return veldGrootte;
     }
     
 }

@@ -14,10 +14,15 @@ import java.awt.Graphics;
  */
 public class NormaleMuur extends Muur {
     
-    public NormaleMuur(int x, int y){
+    public NormaleMuur(int x, int y, Level l){
         setX(x);
         setY(y);
-        
+        setLevel(l);
+    }
+    
+    @Override
+    public boolean shootable(){
+        return true;
     }
     
     @Override
@@ -28,6 +33,6 @@ public class NormaleMuur extends Muur {
     @Override
     public void tekenJezelf(Graphics g){
         g.setColor(Color.darkGray);
-        g.fillRect(getX()*40, getY()*40, 40, 40);
+        g.fillRect(getX()*getVeldgrootte(), getY()*getVeldgrootte(), getVeldgrootte(), getVeldgrootte());
     }
 }

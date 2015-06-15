@@ -29,7 +29,7 @@ public class Vriend extends SpelObject {
     @Override
     public void tekenJezelf(Graphics g){
         g.setColor(Color.white);
-        g.fillOval(huidigveld.getX()*40, huidigveld.getY()*40, 39, 39);
+        g.fillOval(huidigveld.getX()*huidigveld.getVeldgrootte(), huidigveld.getY()*huidigveld.getVeldgrootte(), 39, 39);
     }
 
     void setHuidigVeld(Veld v) {

@@ -20,7 +20,7 @@ public class Level extends JPanel{
     private int levelGrootte;
     private int levelNummer;
     private ArrayList<Veld> velden = new ArrayList<Veld>();
-    private static Veld[][] speelveld;
+    private Veld[][] speelveld;
     
     public Level(int[][] maze, int groot, int nummer) {
         levelGrootte = groot;
@@ -28,13 +28,13 @@ public class Level extends JPanel{
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < levelGrootte; j++) {
                 if (maze[i][j] == 2){
-                    velden.add(new RandMuur(j, i));
+                    velden.add(new RandMuur(j, i, this));
                 }
                 else if (maze[i][j] == 1){
-                    velden.add(new NormaleMuur(j, i));
+                    velden.add(new NormaleMuur(j, i, this));
                 }
                 else {
-                    velden.add(new LoopVeld(j, i));
+                    velden.add(new LoopVeld(j, i, this));
                 }
             }
             
@@ -53,12 +53,7 @@ public class Level extends JPanel{
         
     }
     
-    public static Veld[][] getLevelSpeelveld(){
-        return speelveld;
-    }
-    
     public ArrayList<Veld> getVelden(){
-        
         return velden;
     }
     

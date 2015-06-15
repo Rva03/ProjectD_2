@@ -21,7 +21,7 @@ public class Karakter extends SpelObject {
     private Veld[][] speelveld;
     private int snelheid;
     private Bazooka bazooka = null;
-    private int direction = 0;
+    private String direction = "boven";
 
     
     public Karakter(Level l){
@@ -30,11 +30,11 @@ public class Karakter extends SpelObject {
         speelveld = level.getSpeelveld();
     }
     
-    public void setDirection(int d){
+    public void setDirection(String d){
         direction = d;
     }
     
-    public Integer getDirection(){
+    public String getDirection(){
         return direction;
     }
     
@@ -113,7 +113,7 @@ public class Karakter extends SpelObject {
     @Override
     public void tekenJezelf(Graphics g) {
         g.setColor(Color.blue);
-        g.fillOval(huidigVeld.getX()*40, huidigVeld.getY()*40, 39, 39);
+        g.fillOval(huidigVeld.getX()*huidigVeld.getVeldgrootte(), huidigVeld.getY()*huidigVeld.getVeldgrootte(), 39, 39);
         if(bazooka != null){
             bazooka.tekenJezelf(g);
         }

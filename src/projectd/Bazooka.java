@@ -41,11 +41,27 @@ public class Bazooka extends SpelObject{
     @Override
     public void tekenJezelf(Graphics g) {
         g.setColor(Color.red);
-        g.fillRect(huidigveld.getX()*40+5, huidigveld.getY()*40+12, 30, 16);
+        g.fillRect(huidigveld.getX()*huidigveld.getVeldgrootte()+5, huidigveld.getY()*huidigveld.getVeldgrootte()+12, 30, 16);
     }
     
     public void schiet(){
+        Veld muur = vindEersteMuur();
+        Veld[][] speelveld = huidigveld.getLevel().getSpeelveld();
         System.out.println("ik heb geschoten in de richting: " + huidigveld.getKarakter().getDirection());
+        if (muur.shootable()){
+            speelveld[muur.getY()][muur.getX()] = new LoopVeld(muur.getX(), muur.getY(), huidigveld.getLevel());
+            huidigveld.getKarakter().setBazooka(null);
+        }
+    }
+    
+    public Veld vindEersteMuur(){
+        String direction = huidigveld.getKarakter().getDirection();
+        Veld veld = huidigveld;
+        while (veld.loopbaar()) {
+            veld = veld.getBuur(direction);
+        }
+        System.out.println(veld.getX() + ":" + veld.getY());
+        return veld;
     }
     
 }

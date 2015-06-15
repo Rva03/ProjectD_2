@@ -13,6 +13,10 @@ import java.awt.Graphics;
  */
 public class Muur extends Veld {
     
+    @Override
+    public boolean shootable(){
+        return false;
+    }
     
     @Override
     public boolean loopbaar(){

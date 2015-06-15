@@ -17,12 +17,8 @@ import java.lang.*;
  */
 public class VeldComponent extends JComponent {
 
-    private final int veldGrootte = 40;
     private Karakter karakter;
     private Veld[][] speelveld;
-    
-    
-    
     
     public VeldComponent(Veld[][] speelvelden, Karakter k){
         speelveld = speelvelden;
