@@ -47,23 +47,29 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
         if (code == KeyEvent.VK_UP){
             karakter.goUp();
             karakter.checkVoorSpelobject();
+            karakter.setDirection(0);
         }
         if (code == KeyEvent.VK_DOWN){
             karakter.goDown();
             karakter.checkVoorSpelobject();
+            karakter.setDirection(2);
         }
         if (code == KeyEvent.VK_RIGHT){
             karakter.goRight();
             karakter.checkVoorSpelobject();
+            karakter.setDirection(1);
         }
         if (code == KeyEvent.VK_LEFT){
             karakter.goLeft();
             karakter.checkVoorSpelobject();
+            karakter.setDirection(3);
         }
         if (code == KeyEvent.VK_SPACE){
             karakter.schiet();
         }
-        
+        if (karakter.getBazooka() != null){
+            karakter.getBazooka().setHuidigveld(karakter.getHuidigVeld());
+        }
     }
 
     @Override

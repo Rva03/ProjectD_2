@@ -5,6 +5,8 @@
  */
 package projectd;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Robin
@@ -15,6 +17,11 @@ public class Muur extends Veld {
     @Override
     public boolean loopbaar(){
         return false;
+    }
+    
+    @Override
+    public void tekenJezelf(Graphics g){
+        
     }
     
     

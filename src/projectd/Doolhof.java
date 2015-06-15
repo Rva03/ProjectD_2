@@ -100,12 +100,18 @@ public class Doolhof {
         //Karakter karakter = new Karakter(40, 40, level1);
         //Vriend vriend = new Vriend(400, 320);
         //VeldComponent component = new VeldComponent(level1.getVelden(), level1.getGrootte(), karakter, vriend);
-        Karakter karakter = new Karakter(level1);
         Veld[][] speelveld = level1.getSpeelveld();
+        
+        Karakter karakter = new Karakter(level1);
         karakter.setHuidigVeld(speelveld[1][1]);
+        speelveld[1][1].setKarakter(karakter);
+        
         Vriend vriend = new Vriend();
+        vriend.setHuidigVeld(speelveld[8][10]);
         speelveld[8][10].setSpelObject(vriend);
+        
         Bazooka bazooka = new Bazooka();
+        bazooka.setHuidigveld(speelveld[5][1]);
         speelveld[5][1].setSpelObject(bazooka);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);

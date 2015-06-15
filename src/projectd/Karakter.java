@@ -5,6 +5,8 @@
  */
 package projectd;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
@@ -19,12 +21,21 @@ public class Karakter extends SpelObject {
     private Veld[][] speelveld;
     private int snelheid;
     private Bazooka bazooka = null;
+    private int direction = 0;
 
     
     public Karakter(Level l){
         level = l;
         score = 0;
         speelveld = level.getSpeelveld();
+    }
+    
+    public void setDirection(int d){
+        direction = d;
+    }
+    
+    public Integer getDirection(){
+        return direction;
     }
     
     public void setHuidigVeld(Veld v){
@@ -48,6 +59,7 @@ public class Karakter extends SpelObject {
             //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()+1][v.getX()];
+            huidigVeld.setKarakter(this);
         }
     }
     
@@ -57,6 +69,7 @@ public class Karakter extends SpelObject {
             //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()-1][v.getX()];
+            huidigVeld.setKarakter(this);
         }
     }
     
@@ -66,6 +79,7 @@ public class Karakter extends SpelObject {
             //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()][v.getX()+1];
+            huidigVeld.setKarakter(this);
         }
     }
     
@@ -75,16 +89,13 @@ public class Karakter extends SpelObject {
             //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()][v.getX()-1];
+            huidigVeld.setKarakter(this);
         }
     }
     
     public void checkVoorSpelobject(){
         if (huidigVeld.getSpelObject()== null){
             System.out.println("geen object op dit veld");
-        }
-        else if (huidigVeld.getSpelObject() instanceof Bazooka){
-            bazooka = (Bazooka) huidigVeld.getSpelObject();
-            huidigVeld.setSpelObject(null);
         }
         else{
             huidigVeld.getSpelObject().doAction();
@@ -95,35 +106,17 @@ public class Karakter extends SpelObject {
         return bazooka;
     }
     
+    public void setBazooka(Bazooka b){
+        bazooka = b;
+    }
     
-    
-    
-//    public void up(){
-//        Veld v = level.getVelden().get(((super.getY()/veldGrootte)*level.getGrootte()) + (super.getX()/veldGrootte) - level.getGrootte());
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            super.setY(super.getY()-veldGrootte);
-//        }
-//    }
-//    public void down(){
-//        Veld v = level.getVelden().get(((super.getY()/veldGrootte)*level.getGrootte()) + (super.getX()/veldGrootte) + level.getGrootte());
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            super.setY(super.getY()+veldGrootte);
-//        }
-//    }
-//    public void right(){
-//        Veld v = level.getVelden().get(((super.getY()/veldGrootte)*level.getGrootte()) + (super.getX()/veldGrootte) + 1);
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            super.setX(super.getX()+veldGrootte);
-//        }
-//    }
-//    public void left(){
-//        Veld v = level.getVelden().get(((super.getY()/veldGrootte)*level.getGrootte()) + (super.getX()/veldGrootte) - 1);
-//        if (!(v instanceof RandMuur) && !(v instanceof NormaleMuur)){
-//            super.setX(super.getX()-veldGrootte);
-//        }
-//    }
-    
-    
-    
+    @Override
+    public void tekenJezelf(Graphics g) {
+        g.setColor(Color.blue);
+        g.fillOval(huidigVeld.getX()*40, huidigVeld.getY()*40, 39, 39);
+        if(bazooka != null){
+            bazooka.tekenJezelf(g);
+        }
+    }
     
 }

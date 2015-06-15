@@ -5,6 +5,8 @@
  */
 package projectd;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Robin
@@ -17,6 +19,10 @@ public class SpelObject {
     }
 
     public void doAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void tekenJezelf(Graphics g) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

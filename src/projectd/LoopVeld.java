@@ -5,6 +5,9 @@
  */
 package projectd;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author Robin
@@ -20,6 +23,13 @@ public class LoopVeld extends Veld {
     @Override
     public boolean loopbaar(){
         return true;
+    }
+    
+    @Override
+    public void tekenJezelf(Graphics g){
+        g.setColor(Color.green);
+        g.fillRect(getX()*40, getY()*40, 40, 40);
+        
     }
     
     

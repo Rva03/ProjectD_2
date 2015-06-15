@@ -5,6 +5,9 @@
  */
 package projectd;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author Robin
@@ -20,5 +23,11 @@ public class RandMuur extends Muur {
     @Override
     public boolean loopbaar(){
         return false;
+    }
+    
+    @Override
+    public void tekenJezelf(Graphics g){
+        g.setColor(Color.black);
+        g.fillRect(getX()*40, getY()*40, 40, 40);
     }
 }

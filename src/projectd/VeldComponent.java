@@ -18,22 +18,11 @@ import java.lang.*;
 public class VeldComponent extends JComponent {
 
     private final int veldGrootte = 40;
-    private ArrayList<Veld> velden;
-    private int breed;
-    private int hoog;
     private Karakter karakter;
-    private Vriend vriend;
     private Veld[][] speelveld;
     
     
     
-    public VeldComponent(ArrayList<Veld> veld, int groot, Karakter k, Vriend v){
-        velden = veld;
-        breed = groot;
-        hoog = (velden.size()/groot);
-        karakter = k;
-        vriend = v;
-    }
     
     public VeldComponent(Veld[][] speelvelden, Karakter k){
         speelveld = speelvelden;
@@ -43,79 +32,19 @@ public class VeldComponent extends JComponent {
     @Override
     public void paintComponent(Graphics g)
     {
-        Veld vriendVeld = new Veld();
-        Veld bazookaVeld = new Veld();
         for (Veld[] veld : speelveld){
             for (Veld v : veld){
-                if (v instanceof RandMuur){
-                    g.setColor(Color.black);
-                    g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+                v.tekenJezelf(g);
+                if (v.getKarakter() != null){
+                    v.getKarakter().tekenJezelf(g);
                 }
-                else if (v instanceof NormaleMuur){
-                    g.setColor(Color.darkGray);
-                    g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
+                else if (v.getSpelObject() != null){
+                    v.getSpelObject().tekenJezelf(g);
                 }
-                else if (v instanceof LoopVeld){
-                    g.setColor(Color.green);
-                    g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
-                }
-                if (v.getSpelObject() instanceof Vriend){
-                    vriendVeld = v;
-                }
-                else if (v.getSpelObject() instanceof Bazooka){
-                    bazookaVeld = v;
-                }
-                if (karakter.getBazooka() != null){
-                    bazookaVeld = karakter.getHuidigVeld();
-                }
-                    
             }
         }
-        
-        //Teken vriend
-        g.setColor(Color.white);
-        g.fillOval(vriendVeld.getX()*veldGrootte, vriendVeld.getY()*veldGrootte, 39, 39);
-        
-        //Teken karakter
-        g.setColor(Color.blue);
-        g.fillOval(karakter.getHuidigVeld().getX()*veldGrootte, karakter.getHuidigVeld().getY()*veldGrootte, 39, 39);
-        
-        //Teken bazooka
-        g.setColor(Color.red);
-        g.fillRect(bazookaVeld.getX()*veldGrootte+5, bazookaVeld.getY()*veldGrootte+12, 30, 16);
-        
                   
     }
-    
-//    @Override
-//    protected void paintComponent(Graphics g) {
-//        
-//        for (Veld v : velden){
-//            if (v instanceof RandMuur){
-//                g.setColor(Color.black);
-//                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
-//            }
-//            else if (v instanceof NormaleMuur){
-//                g.setColor(Color.darkGray);
-//                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
-//            }
-//            else if (v instanceof LoopVeld){
-//                g.setColor(Color.green);
-//                g.fillRect(v.getX()*veldGrootte, v.getY()*veldGrootte, veldGrootte, veldGrootte);
-//            }
-//        }
-//        
-//        //Teken vriend
-//        g.setColor(Color.WHITE);
-//        g.fillOval(vriend.getX(), vriend.getY(), 39, 39);
-//        
-//        //Teken karakter
-//        g.setColor(Color.blue);
-//        g.fillOval(karakter.getX(), karakter.getY(), 39, 39);
-//        
-//        
-//    }
-    
     
     
 }
