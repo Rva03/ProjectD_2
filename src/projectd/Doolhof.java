@@ -110,6 +110,9 @@ public class Doolhof {
         Bazooka bazooka = new Bazooka();
         bazooka.setHuidigveld(speelveld[5][1]);
         speelveld[5][1].setSpelObject(bazooka);
+        Bazooka bazooka2 = new Bazooka();
+        bazooka2.setHuidigveld(speelveld[8][4]);
+        speelveld[8][4].setSpelObject(bazooka2);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         

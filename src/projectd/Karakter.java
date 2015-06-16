@@ -22,11 +22,13 @@ public class Karakter extends SpelObject {
     private int snelheid;
     private Bazooka bazooka = null;
     private String direction = "boven";
+    private int levens;
 
     
     public Karakter(Level l){
         level = l;
         score = 0;
+        levens = 3;
         speelveld = level.getSpeelveld();
     }
     
@@ -117,6 +119,14 @@ public class Karakter extends SpelObject {
         if(bazooka != null){
             bazooka.tekenJezelf(g);
         }
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getLevens() {
+        return levens;
     }
     
 }

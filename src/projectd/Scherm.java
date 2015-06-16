@@ -41,6 +41,21 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
+        if (code == KeyEvent.VK_H){
+            JOptionPane.showMessageDialog(component, "Welkom bij de help! \nU kunt bewegen met de pijltjestoetsen, schieten met spatiebalk als u een bazooka heeft en info opvragen met S.");
+        }
+        if (code == KeyEvent.VK_S){
+            String bazooka = "";
+            if (karakter.getBazooka() == null){
+                bazooka = "nee"; 
+            }
+            else {
+                bazooka = "ja";
+            }
+            int score = karakter.getScore();
+            int levens = karakter.getLevens();
+            JOptionPane.showMessageDialog(component, "Level: " + level.getLevelNummer() + "\nBazooka: " + bazooka + "\nScore: " + score + "\nLevens: " + levens);
+        }
         if (code == KeyEvent.VK_UP){
             karakter.goUp();
             karakter.checkVoorSpelobject();

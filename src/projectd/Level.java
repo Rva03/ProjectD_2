@@ -65,4 +65,8 @@ public class Level extends JPanel{
         return levelGrootte;
     }
     
+    public int getLevelNummer(){
+        return levelNummer;
+    }
+    
 }

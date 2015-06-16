@@ -33,9 +33,11 @@ public class Bazooka extends SpelObject{
     public void doAction(){
         System.out.println("ik ben een bazooka");
         if (huidigveld.getKarakter() != null){
-            huidigveld.getKarakter().setBazooka((Bazooka)huidigveld.getSpelObject());
+            if (huidigveld.getKarakter().getBazooka() == null){
+                huidigveld.getKarakter().setBazooka((Bazooka)huidigveld.getSpelObject());
+                huidigveld.setSpelObject(null);
+            }
         }
-        huidigveld.setSpelObject(null);
     }
     
     @Override
