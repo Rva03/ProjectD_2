@@ -31,17 +31,19 @@ public class Doolhof {
     private static Scherm frame3;
     
     public static void main(String[] args) {
-
-        //maakLevels();
         showStart();
-        
-        
     }
     
-    public static void maakLevels(){
-        maakLevel1();
-        maakLevel2();
-        maakLevel3();
+    public static Scherm getFrame1(){
+        return frame1;
+    }
+    
+    public static Scherm getFrame2(){
+        return frame2;
+    }
+
+    public static Scherm getFrame3(){
+        return frame3;
     }
     
     public static void maakLevel1(){
@@ -95,7 +97,7 @@ public class Doolhof {
         
     }
 
-    private static void startLevel1() {
+    public static void startLevel1() {
         maakLevel1();
         Veld[][] speelveld = level1.getSpeelveld();
         
@@ -113,6 +115,24 @@ public class Doolhof {
         Bazooka bazooka2 = new Bazooka();
         bazooka2.setHuidigveld(speelveld[8][4]);
         speelveld[8][4].setSpelObject(bazooka2);
+        
+        Munt munt1 = new Munt();
+        munt1.setHuidigVeld(speelveld[5][3]);
+        speelveld[5][3].setSpelObject(munt1);
+        Munt munt2 = new Munt();
+        munt2.setHuidigVeld(speelveld[8][8]);
+        speelveld[8][8].setSpelObject(munt2);
+        Munt munt3 = new Munt();
+        munt3.setHuidigVeld(speelveld[3][7]);
+        speelveld[3][7].setSpelObject(munt3);
+        
+        Valsspeler valsspeler1 = new Valsspeler(1);
+        valsspeler1.setHuidigVeld(speelveld[8][3]);
+        speelveld[8][3].setSpelObject(valsspeler1);
+        Valsspeler valsspeler2 = new Valsspeler(2);
+        valsspeler2.setHuidigVeld(speelveld[3][8]);
+        speelveld[3][8].setSpelObject(valsspeler2);
+        
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -136,7 +156,7 @@ public class Doolhof {
         frame1.setVisible(true);
     }
     
-    private static void startLevel2() {
+    public static void startLevel2() {
         maakLevel2();
         Veld[][] speelveld = level2.getSpeelveld();
         
@@ -151,6 +171,23 @@ public class Doolhof {
         Bazooka bazooka = new Bazooka();
         bazooka.setHuidigveld(speelveld[5][1]);
         speelveld[5][1].setSpelObject(bazooka);
+        
+        Munt munt1 = new Munt();
+        munt1.setHuidigVeld(speelveld[5][3]);
+        speelveld[5][3].setSpelObject(munt1);
+        Munt munt2 = new Munt();
+        munt2.setHuidigVeld(speelveld[8][8]);
+        speelveld[8][8].setSpelObject(munt2);
+        Munt munt3 = new Munt();
+        munt3.setHuidigVeld(speelveld[3][7]);
+        speelveld[3][7].setSpelObject(munt3);
+        
+        Valsspeler valsspeler1 = new Valsspeler(1);
+        valsspeler1.setHuidigVeld(speelveld[8][3]);
+        speelveld[8][3].setSpelObject(valsspeler1);
+        Valsspeler valsspeler2 = new Valsspeler(2);
+        valsspeler2.setHuidigVeld(speelveld[3][8]);
+        speelveld[3][8].setSpelObject(valsspeler2);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -174,7 +211,7 @@ public class Doolhof {
         frame2.setVisible(true);
     }
     
-    private static void startLevel3() {
+    public static void startLevel3() {
         maakLevel3();
         Veld[][] speelveld = level3.getSpeelveld();
         
@@ -189,6 +226,23 @@ public class Doolhof {
         Bazooka bazooka = new Bazooka();
         bazooka.setHuidigveld(speelveld[5][1]);
         speelveld[5][1].setSpelObject(bazooka);
+        
+        Munt munt1 = new Munt();
+        munt1.setHuidigVeld(speelveld[5][3]);
+        speelveld[5][3].setSpelObject(munt1);
+        Munt munt2 = new Munt();
+        munt2.setHuidigVeld(speelveld[8][8]);
+        speelveld[8][8].setSpelObject(munt2);
+        Munt munt3 = new Munt();
+        munt3.setHuidigVeld(speelveld[3][7]);
+        speelveld[3][7].setSpelObject(munt3);
+        
+        Valsspeler valsspeler1 = new Valsspeler(1);
+        valsspeler1.setHuidigVeld(speelveld[8][3]);
+        speelveld[8][3].setSpelObject(valsspeler1);
+        Valsspeler valsspeler2 = new Valsspeler(2);
+        valsspeler2.setHuidigVeld(speelveld[3][8]);
+        speelveld[3][8].setSpelObject(valsspeler2);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -212,7 +266,7 @@ public class Doolhof {
         frame3.setVisible(true);
     }
 
-    private static void showStart() {
+    public static void showStart() {
         startscherm = new JFrame();
         startscherm.setSize(750, 500);
         startscherm.setTitle("Doolhof Spel");

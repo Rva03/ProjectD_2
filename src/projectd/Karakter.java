@@ -8,6 +8,7 @@ package projectd;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -124,9 +125,33 @@ public class Karakter extends SpelObject {
     public int getScore() {
         return score;
     }
+    
+    public void setScore(int aantal){
+        score += aantal;
+    }
 
     public int getLevens() {
         return levens;
+    }
+    
+    public void setLevens(int aantal){
+        levens -= aantal;
+        if (levens < 1){
+            JOptionPane.showMessageDialog(level, "Game Over!\nHet level wordt opnieuw gestart...");
+            if (level.getLevelNummer() == 1){
+                Doolhof.getFrame1().dispose();
+                Doolhof.startLevel1();  
+            }
+            else if (level.getLevelNummer() == 2){
+                Doolhof.getFrame2().dispose();
+                Doolhof.startLevel2();  
+            }
+            else if (level.getLevelNummer() == 3){
+                Doolhof.getFrame3().dispose();
+                Doolhof.startLevel3();  
+            }
+            
+        }
     }
     
 }

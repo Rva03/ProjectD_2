@@ -21,6 +21,7 @@ public class Vriend extends SpelObject {
         
     }
     
+    @Override
     public void doAction(){
         System.out.println("U heeft gewonnen!");
         JOptionPane.showMessageDialog(null, "Level gehaald!");  
@@ -32,7 +33,8 @@ public class Vriend extends SpelObject {
         g.fillOval(huidigveld.getX()*huidigveld.getVeldgrootte(), huidigveld.getY()*huidigveld.getVeldgrootte(), 39, 39);
     }
 
-    void setHuidigVeld(Veld v) {
+    @Override
+    public void setHuidigVeld(Veld v) {
         huidigveld = v;
     }
     
