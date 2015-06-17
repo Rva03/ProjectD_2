@@ -5,9 +5,7 @@
  */
 package projectd;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import javax.swing.JComponent;
 
 /**
  *
@@ -23,11 +21,20 @@ public class Veld {
     private Veld buurOnder;
     private Veld buurRechts;
     private Veld buurLinks;
+    private boolean oplossingVeld = false;
     private Level level;
     private final int veldGrootte = 40;
 
-    
     public Veld(){
+        
+    }
+    
+    public void setOplossing(boolean b){
+        oplossingVeld = b;
+    }
+    
+    public boolean getOplossingVeld(){
+        return oplossingVeld;
     }
     
     public Level getLevel(){

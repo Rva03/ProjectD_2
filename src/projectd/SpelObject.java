@@ -11,7 +11,7 @@ import java.awt.Graphics;
  *
  * @author Robin
  */
-public class SpelObject {
+public abstract class SpelObject {
     
     private Veld huidigVeld;
     

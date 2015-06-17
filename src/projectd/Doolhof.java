@@ -61,59 +61,16 @@ public class Doolhof {
         };
         level1 = new Level(maze1, 12, 1);
         
-    }
-    
-    public static void maakLevel2(){
-        int[][] maze1 = { 
-            {2,2,2,2,2,2,2,2,2,2,2,2},
-            {2,0,1,0,1,0,1,0,0,0,0,2},
-            {2,0,1,0,0,0,1,0,1,1,0,2},
-            {2,0,0,0,1,1,1,0,0,0,0,2},
-            {2,0,1,0,0,0,0,0,0,1,1,2},
-            {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,1,0,1,0,0,0,0,0,0,2},
-            {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,0,0,1,0,0,0,0,1,0,2},
-            {2,2,2,2,2,2,2,2,2,2,2,2}
-        };
-        level2 = new Level(maze1, 12, 2);
-        
-    }
-    
-    public static void maakLevel3(){
-        int[][] maze1 = { 
-            {2,2,2,2,2,2,2,2,2,2,2,2},
-            {2,0,0,0,1,0,1,0,0,0,0,2},
-            {2,1,1,0,0,0,1,0,1,1,0,2},
-            {2,0,0,0,1,1,1,0,0,0,0,2},
-            {2,0,1,0,0,0,0,0,1,1,0,2},
-            {2,0,1,0,1,1,1,0,1,0,0,2},
-            {2,0,1,1,1,0,0,0,0,1,0,2},
-            {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,1,0,0,0,0,0,0,1,0,2},
-            {2,2,2,2,2,2,2,2,2,2,2,2}
-        };
-        level3 = new Level(maze1, 12, 3);
-        
-    }
-
-    public static void startLevel1() {
-        maakLevel1();
         Veld[][] speelveld = level1.getSpeelveld();
-        
-        Karakter karakter = new Karakter(level1);
-        karakter.setHuidigVeld(speelveld[1][1]);
-        speelveld[1][1].setKarakter(karakter);
-        
         Vriend vriend = new Vriend();
         vriend.setHuidigVeld(speelveld[8][10]);
         speelveld[8][10].setSpelObject(vriend);
         
         Bazooka bazooka = new Bazooka();
-        bazooka.setHuidigveld(speelveld[5][1]);
+        bazooka.setHuidigVeld(speelveld[5][1]);
         speelveld[5][1].setSpelObject(bazooka);
         Bazooka bazooka2 = new Bazooka();
-        bazooka2.setHuidigveld(speelveld[8][4]);
+        bazooka2.setHuidigVeld(speelveld[8][4]);
         speelveld[8][4].setSpelObject(bazooka2);
         
         Munt munt1 = new Munt();
@@ -133,6 +90,110 @@ public class Doolhof {
         valsspeler2.setHuidigVeld(speelveld[3][8]);
         speelveld[3][8].setSpelObject(valsspeler2);
         
+        Helper helper = new Helper();
+        helper.setHuidigVeld(speelveld[4][5]);
+        speelveld[4][5].setSpelObject(helper);
+    }
+    
+    public static void maakLevel2(){
+        int[][] maze1 = { 
+            {2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,0,1,0,1,0,1,0,0,0,0,2},
+            {2,0,1,0,0,0,1,0,1,1,0,2},
+            {2,0,0,0,1,1,1,0,0,0,0,2},
+            {2,0,1,0,0,0,0,0,0,1,1,2},
+            {2,0,1,0,1,1,1,0,1,1,0,2},
+            {2,0,1,0,1,0,0,0,0,0,0,2},
+            {2,0,1,0,1,1,1,0,1,1,0,2},
+            {2,0,0,0,1,0,0,0,0,1,0,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2}
+        };
+        level2 = new Level(maze1, 12, 2);
+        
+        Veld[][] speelveld = level2.getSpeelveld();
+        Vriend vriend = new Vriend();
+        vriend.setHuidigVeld(speelveld[8][10]);
+        speelveld[8][10].setSpelObject(vriend);
+        
+        Bazooka bazooka = new Bazooka();
+        bazooka.setHuidigVeld(speelveld[5][1]);
+        speelveld[5][1].setSpelObject(bazooka);
+        
+        Munt munt1 = new Munt();
+        munt1.setHuidigVeld(speelveld[5][3]);
+        speelveld[5][3].setSpelObject(munt1);
+        Munt munt2 = new Munt();
+        munt2.setHuidigVeld(speelveld[8][8]);
+        speelveld[8][8].setSpelObject(munt2);
+        Munt munt3 = new Munt();
+        munt3.setHuidigVeld(speelveld[3][7]);
+        speelveld[3][7].setSpelObject(munt3);
+        
+        Valsspeler valsspeler1 = new Valsspeler(1);
+        valsspeler1.setHuidigVeld(speelveld[8][3]);
+        speelveld[8][3].setSpelObject(valsspeler1);
+        Valsspeler valsspeler2 = new Valsspeler(2);
+        valsspeler2.setHuidigVeld(speelveld[3][8]);
+        speelveld[3][8].setSpelObject(valsspeler2);
+        
+        Helper helper = new Helper();
+        helper.setHuidigVeld(speelveld[4][5]);
+        speelveld[4][5].setSpelObject(helper);
+    }
+    
+    public static void maakLevel3(){
+        int[][] maze1 = { 
+            {2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,0,0,0,1,0,1,0,0,0,0,2},
+            {2,1,1,0,0,0,1,0,1,1,0,2},
+            {2,0,0,0,1,1,1,0,0,0,0,2},
+            {2,0,1,0,0,0,0,0,1,1,0,2},
+            {2,0,1,0,1,1,1,0,1,0,0,2},
+            {2,0,1,1,1,0,0,0,0,1,0,2},
+            {2,0,1,0,1,1,1,0,1,1,0,2},
+            {2,0,1,0,0,0,0,0,0,1,0,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2}
+        };
+        level3 = new Level(maze1, 12, 3);
+        
+        Veld[][] speelveld = level3.getSpeelveld();
+        Vriend vriend = new Vriend();
+        vriend.setHuidigVeld(speelveld[8][10]);
+        speelveld[8][10].setSpelObject(vriend);
+        
+        Bazooka bazooka = new Bazooka();
+        bazooka.setHuidigVeld(speelveld[5][1]);
+        speelveld[5][1].setSpelObject(bazooka);
+        
+        Munt munt1 = new Munt();
+        munt1.setHuidigVeld(speelveld[5][3]);
+        speelveld[5][3].setSpelObject(munt1);
+        Munt munt2 = new Munt();
+        munt2.setHuidigVeld(speelveld[8][8]);
+        speelveld[8][8].setSpelObject(munt2);
+        Munt munt3 = new Munt();
+        munt3.setHuidigVeld(speelveld[3][7]);
+        speelveld[3][7].setSpelObject(munt3);
+        
+        Valsspeler valsspeler1 = new Valsspeler(1);
+        valsspeler1.setHuidigVeld(speelveld[8][3]);
+        speelveld[8][3].setSpelObject(valsspeler1);
+        Valsspeler valsspeler2 = new Valsspeler(2);
+        valsspeler2.setHuidigVeld(speelveld[3][8]);
+        speelveld[3][8].setSpelObject(valsspeler2);
+        
+        Helper helper = new Helper();
+        helper.setHuidigVeld(speelveld[8][1]);
+        speelveld[8][1].setSpelObject(helper);
+    }
+
+    public static void startLevel1() {
+        maakLevel1();
+        Veld[][] speelveld = level1.getSpeelveld();
+        
+        Karakter karakter = new Karakter(level1);
+        karakter.setHuidigVeld(speelveld[1][1]);
+        speelveld[1][1].setKarakter(karakter);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -164,31 +225,6 @@ public class Doolhof {
         karakter.setHuidigVeld(speelveld[1][1]);
         speelveld[1][1].setKarakter(karakter);
         
-        Vriend vriend = new Vriend();
-        vriend.setHuidigVeld(speelveld[8][10]);
-        speelveld[8][10].setSpelObject(vriend);
-        
-        Bazooka bazooka = new Bazooka();
-        bazooka.setHuidigveld(speelveld[5][1]);
-        speelveld[5][1].setSpelObject(bazooka);
-        
-        Munt munt1 = new Munt();
-        munt1.setHuidigVeld(speelveld[5][3]);
-        speelveld[5][3].setSpelObject(munt1);
-        Munt munt2 = new Munt();
-        munt2.setHuidigVeld(speelveld[8][8]);
-        speelveld[8][8].setSpelObject(munt2);
-        Munt munt3 = new Munt();
-        munt3.setHuidigVeld(speelveld[3][7]);
-        speelveld[3][7].setSpelObject(munt3);
-        
-        Valsspeler valsspeler1 = new Valsspeler(1);
-        valsspeler1.setHuidigVeld(speelveld[8][3]);
-        speelveld[8][3].setSpelObject(valsspeler1);
-        Valsspeler valsspeler2 = new Valsspeler(2);
-        valsspeler2.setHuidigVeld(speelveld[3][8]);
-        speelveld[3][8].setSpelObject(valsspeler2);
-        
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
         frame2 = new Scherm(karakter, component, level2);
@@ -218,31 +254,6 @@ public class Doolhof {
         Karakter karakter = new Karakter(level3);
         karakter.setHuidigVeld(speelveld[1][1]);
         speelveld[1][1].setKarakter(karakter);
-        
-        Vriend vriend = new Vriend();
-        vriend.setHuidigVeld(speelveld[8][10]);
-        speelveld[8][10].setSpelObject(vriend);
-        
-        Bazooka bazooka = new Bazooka();
-        bazooka.setHuidigveld(speelveld[5][1]);
-        speelveld[5][1].setSpelObject(bazooka);
-        
-        Munt munt1 = new Munt();
-        munt1.setHuidigVeld(speelveld[5][3]);
-        speelveld[5][3].setSpelObject(munt1);
-        Munt munt2 = new Munt();
-        munt2.setHuidigVeld(speelveld[8][8]);
-        speelveld[8][8].setSpelObject(munt2);
-        Munt munt3 = new Munt();
-        munt3.setHuidigVeld(speelveld[3][7]);
-        speelveld[3][7].setSpelObject(munt3);
-        
-        Valsspeler valsspeler1 = new Valsspeler(1);
-        valsspeler1.setHuidigVeld(speelveld[8][3]);
-        speelveld[8][3].setSpelObject(valsspeler1);
-        Valsspeler valsspeler2 = new Valsspeler(2);
-        valsspeler2.setHuidigVeld(speelveld[3][8]);
-        speelveld[3][8].setSpelObject(valsspeler2);
         
         VeldComponent component = new VeldComponent(speelveld, karakter);
         
@@ -304,8 +315,5 @@ public class Doolhof {
         startscherm.add(startpanel);
         startscherm.setVisible(true);
     }
-    
-    
-    
-    
+
 }

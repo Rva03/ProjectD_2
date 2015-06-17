@@ -29,14 +29,13 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
         karakter = k;
         component = vc;
         level = l;
-        
     }
     
     @Override
     public void keyTyped(KeyEvent e) {}
+    
     @Override
     public void keyReleased(KeyEvent e) {}
-    
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -80,7 +79,7 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
             karakter.schiet();
         }
         if (karakter.getBazooka() != null){
-            karakter.getBazooka().setHuidigveld(karakter.getHuidigVeld());
+            karakter.getBazooka().setHuidigVeld(karakter.getHuidigVeld());
         }
     }
 
@@ -88,6 +87,5 @@ public class Scherm extends JFrame implements ActionListener, KeyListener{
     public void actionPerformed(ActionEvent e) {
         component.repaint();
     }
-
     
 }

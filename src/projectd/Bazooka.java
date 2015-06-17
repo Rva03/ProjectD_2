@@ -14,28 +14,28 @@ import java.awt.Graphics;
  */
 public class Bazooka extends SpelObject{
     
-    private Veld huidigveld;
+    //private Veld huidigveld;
     
     public Bazooka(){
         
     }
     
-    public Veld getHuidigveld(){
-        return huidigveld;
-    }
-    
-    public void setHuidigveld(Veld v){
-        huidigveld = v;
-    }
-    
+//    public Veld getHuidigveld(){
+//        return huidigveld;
+//    }
+//    
+//    public void setHuidigveld(Veld v){
+//        huidigveld = v;
+//    }
     
     @Override
     public void doAction(){
-        System.out.println("ik ben een bazooka");
-        if (huidigveld.getKarakter() != null){
-            if (huidigveld.getKarakter().getBazooka() == null){
-                huidigveld.getKarakter().setBazooka((Bazooka)huidigveld.getSpelObject());
-                huidigveld.setSpelObject(null);
+        System.out.println("Bazooka gevonden!");
+        if (getHuidigVeld().getKarakter() != null){
+            if (getHuidigVeld().getKarakter().getBazooka() == null){
+                System.out.println("Bazooka opgepakt!");
+                getHuidigVeld().getKarakter().setBazooka((Bazooka)getHuidigVeld().getSpelObject());
+                getHuidigVeld().setSpelObject(null);
             }
         }
     }
@@ -43,26 +43,26 @@ public class Bazooka extends SpelObject{
     @Override
     public void tekenJezelf(Graphics g) {
         g.setColor(Color.red);
-        g.fillRect(huidigveld.getX()*huidigveld.getVeldgrootte()+5, huidigveld.getY()*huidigveld.getVeldgrootte()+12, 30, 16);
+        g.fillRect(getHuidigVeld().getX()*getHuidigVeld().getVeldgrootte()+5, getHuidigVeld().getY()*getHuidigVeld().getVeldgrootte()+12, 30, 16);
     }
     
     public void schiet(){
         Veld muur = vindEersteMuur();
-        Veld[][] speelveld = huidigveld.getLevel().getSpeelveld();
-        System.out.println("ik heb geschoten in de richting: " + huidigveld.getKarakter().getDirection());
+        Veld[][] speelveld = getHuidigVeld().getLevel().getSpeelveld();
+        //System.out.println("ik heb geschoten in de richting: " + getHuidigVeld().getKarakter().getDirection());
         if (muur.shootable()){
-            speelveld[muur.getY()][muur.getX()] = new LoopVeld(muur.getX(), muur.getY(), huidigveld.getLevel());
-            huidigveld.getKarakter().setBazooka(null);
+            speelveld[muur.getY()][muur.getX()] = new LoopVeld(muur.getX(), muur.getY(), getHuidigVeld().getLevel());
+            getHuidigVeld().getKarakter().setBazooka(null);
         }
     }
     
     public Veld vindEersteMuur(){
-        String direction = huidigveld.getKarakter().getDirection();
-        Veld veld = huidigveld;
+        String direction = getHuidigVeld().getKarakter().getDirection();
+        Veld veld = getHuidigVeld();
         while (veld.loopbaar()) {
             veld = veld.getBuur(direction);
         }
-        System.out.println(veld.getX() + ":" + veld.getY());
+        //System.out.println(veld.getX() + ":" + veld.getY());
         return veld;
     }
     

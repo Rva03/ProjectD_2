@@ -11,7 +11,7 @@ import java.awt.Graphics;
  *
  * @author Robin
  */
-public class Muur extends Veld {
+public abstract class Muur extends Veld {
     
     @Override
     public boolean shootable(){

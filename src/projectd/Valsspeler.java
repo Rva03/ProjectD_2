@@ -14,7 +14,7 @@ import java.awt.Graphics;
  */
 public class Valsspeler extends SpelObject{
     
-    private int waarde;
+    private final int waarde;
     
     public Valsspeler(int w){
         waarde = w;
@@ -22,6 +22,7 @@ public class Valsspeler extends SpelObject{
     
     @Override
     public void doAction(){
+        System.out.println("U heeft " + waarde + " levens verloren!");
         this.getHuidigVeld().getKarakter().setLevens(waarde);
         this.getHuidigVeld().setSpelObject(null);
     }

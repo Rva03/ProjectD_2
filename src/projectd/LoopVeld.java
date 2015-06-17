@@ -14,7 +14,6 @@ import java.awt.Graphics;
  */
 public class LoopVeld extends Veld {
     
-    
     public LoopVeld(int x, int y, Level l){
         setX(x);
         setY(y);
@@ -28,10 +27,16 @@ public class LoopVeld extends Veld {
     
     @Override
     public void tekenJezelf(Graphics g){
-        g.setColor(Color.green);
-        g.fillRect(getX()*getVeldgrootte(), getY()*getVeldgrootte(), getVeldgrootte(), getVeldgrootte());
-        
+        if (this.getOplossingVeld()){
+            g.setColor(Color.green);
+            g.fillRect(getX()*getVeldgrootte(), getY()*getVeldgrootte(), getVeldgrootte(), getVeldgrootte());
+            g.setColor(Color.blue);
+            g.fillOval(getX()*getVeldgrootte()+12, getY()*getVeldgrootte()+12, 16, 16);
+        }
+        else{
+            g.setColor(Color.green);
+            g.fillRect(getX()*getVeldgrootte(), getY()*getVeldgrootte(), getVeldgrootte(), getVeldgrootte());
+        }
     }
-    
     
 }

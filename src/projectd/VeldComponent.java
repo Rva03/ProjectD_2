@@ -5,11 +5,8 @@
  */
 package projectd;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.util.*;
 import javax.swing.*;
-import java.lang.*;
 
 /**
  *
@@ -41,6 +38,5 @@ public class VeldComponent extends JComponent {
         }
                   
     }
-    
     
 }

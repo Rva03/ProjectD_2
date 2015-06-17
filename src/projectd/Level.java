@@ -37,7 +37,6 @@ public class Level extends JPanel{
                     velden.add(new LoopVeld(j, i, this));
                 }
             }
-            
         }
         speelveld = new Veld[velden.size()/levelGrootte][levelGrootte];
         int i;
@@ -49,8 +48,6 @@ public class Level extends JPanel{
                 teller++;
             }
         }
-        
-        
     }
     
     public ArrayList<Veld> getVelden(){

@@ -7,7 +7,6 @@ package projectd;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +19,6 @@ public class Karakter extends SpelObject {
     private int score;
     private Veld huidigVeld;
     private Veld[][] speelveld;
-    private int snelheid;
     private Bazooka bazooka = null;
     private String direction = "boven";
     private int levens;
@@ -41,11 +39,13 @@ public class Karakter extends SpelObject {
         return direction;
     }
     
+    @Override
     public void setHuidigVeld(Veld v){
         huidigVeld = v;
         v.setKarakter(this);
     }
     
+    @Override
     public Veld getHuidigVeld(){
         return huidigVeld;
     }
@@ -59,7 +59,6 @@ public class Karakter extends SpelObject {
     public void goDown(){
         if (huidigVeld.getBuur("onder").loopbaar()){
             huidigVeld.setKarakter(null);
-            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()+1][v.getX()];
             huidigVeld.setKarakter(this);
@@ -69,7 +68,6 @@ public class Karakter extends SpelObject {
     public void goUp(){
         if (huidigVeld.getBuur("boven").loopbaar()){
             huidigVeld.setKarakter(null);
-            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()-1][v.getX()];
             huidigVeld.setKarakter(this);
@@ -79,7 +77,6 @@ public class Karakter extends SpelObject {
     public void goRight(){
         if (huidigVeld.getBuur("rechts").loopbaar()){
             huidigVeld.setKarakter(null);
-            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()][v.getX()+1];
             huidigVeld.setKarakter(this);
@@ -89,7 +86,6 @@ public class Karakter extends SpelObject {
     public void goLeft(){
         if (huidigVeld.getBuur("links").loopbaar()){
             huidigVeld.setKarakter(null);
-            //speelveld = level.getSpeelveld();
             Veld v = huidigVeld;
             huidigVeld = speelveld[v.getY()][v.getX()-1];
             huidigVeld.setKarakter(this);
@@ -98,7 +94,7 @@ public class Karakter extends SpelObject {
     
     public void checkVoorSpelobject(){
         if (huidigVeld.getSpelObject()== null){
-            System.out.println("geen object op dit veld");
+            //System.out.println("geen object op dit veld");
         }
         else{
             huidigVeld.getSpelObject().doAction();
