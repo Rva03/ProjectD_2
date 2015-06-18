@@ -14,12 +14,11 @@ import javax.swing.*;
  */
 public class VeldComponent extends JComponent {
 
-    private Karakter karakter;
+    //private Karakter karakter;
     private Veld[][] speelveld;
     
-    public VeldComponent(Veld[][] speelvelden, Karakter k){
+    public VeldComponent(Veld[][] speelvelden){
         speelveld = speelvelden;
-        karakter = k;
     }
     
     @Override

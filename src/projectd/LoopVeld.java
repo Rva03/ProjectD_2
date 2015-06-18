@@ -26,6 +26,11 @@ public class LoopVeld extends Veld {
     }
     
     @Override
+    public boolean shootable(){
+        return false;
+    }
+    
+    @Override
     public void tekenJezelf(Graphics g){
         if (this.getOplossingVeld()){
             g.setColor(Color.green);

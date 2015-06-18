@@ -22,10 +22,6 @@ public abstract class SpelObject {
     public Veld getHuidigVeld(){
         return huidigVeld;
     }
-    
-    public void verdwijn(){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public void doAction() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

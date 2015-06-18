@@ -47,7 +47,7 @@ public class SchermTest {
         };
         level1 = new Level(maze1, 12, 1);
         instance = new Karakter(level1);
-        component = new VeldComponent(level1.getSpeelveld(), instance);
+        component = new VeldComponent(level1.getSpeelveld());
     }
     
     @AfterClass

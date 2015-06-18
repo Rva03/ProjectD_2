@@ -26,9 +26,6 @@ public class Veld {
     private final int veldGrootte = 40;
     private int aantalSchoten;
 
-    public Veld(){
-        
-    }
     
     public void setAantalSchoten(int aantal){
         aantalSchoten = aantal;

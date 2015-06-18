@@ -228,7 +228,7 @@ public class Doolhof {
         karakter.setHuidigVeld(speelveld[1][1]);
         speelveld[1][1].setKarakter(karakter);
         
-        VeldComponent component = new VeldComponent(speelveld, karakter);
+        VeldComponent component = new VeldComponent(speelveld);
         
         frame1 = new Scherm(karakter, component, level1);
         frame1.setSize(750, 500);
@@ -258,7 +258,7 @@ public class Doolhof {
         karakter.setHuidigVeld(speelveld[1][1]);
         speelveld[1][1].setKarakter(karakter);
         
-        VeldComponent component = new VeldComponent(speelveld, karakter);
+        VeldComponent component = new VeldComponent(speelveld);
         
         frame2 = new Scherm(karakter, component, level2);
         frame2.setSize(750, 500);
@@ -288,7 +288,7 @@ public class Doolhof {
         karakter.setHuidigVeld(speelveld[1][1]);
         speelveld[1][1].setKarakter(karakter);
         
-        VeldComponent component = new VeldComponent(speelveld, karakter);
+        VeldComponent component = new VeldComponent(speelveld);
         
         frame3 = new Scherm(karakter, component, level3);
         frame3.setSize(750, 500);
