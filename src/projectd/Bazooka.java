@@ -50,8 +50,12 @@ public class Bazooka extends SpelObject{
         Veld muur = vindEersteMuur();
         Veld[][] speelveld = getHuidigVeld().getLevel().getSpeelveld();
         //System.out.println("ik heb geschoten in de richting: " + getHuidigVeld().getKarakter().getDirection());
-        if (muur.shootable()){
+        if (muur.shootable() && muur.getAantalSchoten() == 1){
             speelveld[muur.getY()][muur.getX()] = new LoopVeld(muur.getX(), muur.getY(), getHuidigVeld().getLevel());
+            getHuidigVeld().getKarakter().setBazooka(null);
+        }
+        else if (muur.shootable() && muur.getAantalSchoten() == 2){
+            muur.setAantalSchoten(1);
             getHuidigVeld().getKarakter().setBazooka(null);
         }
     }

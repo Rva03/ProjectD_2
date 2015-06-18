@@ -23,9 +23,9 @@ public class SchermTest {
     
     
     private static ArrayList<Veld> velden = new ArrayList<Veld>();
-    //private static Karakter k = new Karakter(40, 40);
     private static VeldComponent component;
     private static Level level1;
+    private static Karakter instance;
     private static final int veldGrootte = 40;
     
     public SchermTest() {
@@ -34,21 +34,20 @@ public class SchermTest {
     @BeforeClass
     public static void setUpClass() {
         int[][] maze1 = { 
-            {1,1,1,1,1,1,1,1,1,1,1,1},
-            {1,0,1,0,1,0,1,0,0,0,0,1},
-            {1,0,1,0,0,0,1,0,1,1,0,1},
-            {1,0,0,0,1,1,1,0,0,0,0,1},
-            {1,0,1,0,0,0,0,0,1,1,0,1},
-            {1,0,1,0,1,1,1,0,1,0,0,1},
-            {1,0,1,0,1,0,0,0,0,1,0,1},
-            {1,0,1,0,1,1,1,0,1,1,0,1},
-            {1,0,0,0,0,0,0,0,0,1,0,1},
-            {1,1,1,1,1,1,1,1,1,1,1,1}
+            {2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,0,1,0,1,0,1,0,0,0,0,2},
+            {2,0,1,0,0,0,1,0,1,1,0,2},
+            {2,0,0,0,1,1,1,0,0,0,0,2},
+            {2,0,1,0,0,0,0,0,1,1,0,2},
+            {2,0,1,0,1,1,1,0,3,0,0,2},
+            {2,0,1,0,3,0,0,0,0,1,0,2},
+            {2,0,1,0,1,1,1,0,1,1,0,2},
+            {2,0,0,0,0,3,0,0,0,3,0,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2}
         };
-        int levelGrootte = 12;
-        int levelNummer = 1;
-        level1 = new Level(maze1, levelGrootte, levelNummer);
-        //component = new VeldComponent(level1.getVelden(), level1.getGrootte(), k);
+        level1 = new Level(maze1, 12, 1);
+        instance = new Karakter(level1);
+        component = new VeldComponent(level1.getSpeelveld(), instance);
     }
     
     @AfterClass
@@ -64,77 +63,77 @@ public class SchermTest {
     }
 
     /**
-     * Test of up method, of class Scherm.
+     * Test of up method, of class Karakter.
      */
     @Test
     public void testUp() {
-        Karakter instance = new Karakter(veldGrootte, 2*veldGrootte, level1);
+        instance.setHuidigVeld(level1.getSpeelveld()[2][1]);
         instance.goUp();
-        int expResult = 1*veldGrootte;
-        int result = instance.getY();
+        Veld expResult;
+        if (level1.getSpeelveld()[1][1].loopbaar()){
+            expResult = level1.getSpeelveld()[1][1];
+        }
+        else{
+            expResult = level1.getSpeelveld()[2][1];
+        }
+        Veld result = instance.getHuidigVeld();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of down method, of class Scherm.
+     * Test of down method, of class Karakter.
      */
     @Test
     public void testDown() {
-        Karakter instance = new Karakter(veldGrootte, 2*veldGrootte, level1);
+        instance.setHuidigVeld(level1.getSpeelveld()[2][1]);
         instance.goDown();
-        int expResult = 3*veldGrootte;
-        int result = instance.getY();
+        Veld expResult;
+        if (level1.getSpeelveld()[3][1].loopbaar()){
+            expResult = level1.getSpeelveld()[3][1];
+        }
+        else{
+            expResult = level1.getSpeelveld()[2][1];
+        }
+        Veld result = instance.getHuidigVeld();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of right method, of class Scherm.
+     * Test of right method, of class Karakter.
      */
     @Test
     public void testRight() {
-        Karakter instance = new Karakter(2*veldGrootte, veldGrootte, level1);
+        instance.setHuidigVeld(level1.getSpeelveld()[3][1]);
         instance.goRight();
-        int expResult = 3*veldGrootte;
-        int result = instance.getX();
+        Veld expResult;
+        if (level1.getSpeelveld()[3][2].loopbaar()){
+            expResult = level1.getSpeelveld()[3][2];
+        }
+        else{
+            expResult = level1.getSpeelveld()[3][1];
+        }
+        Veld result = instance.getHuidigVeld();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of left method, of class Scherm.
+     * Test of left method, of class Karakter.
      */
     @Test
     public void testLeft() {
-        Karakter instance = new Karakter(2*veldGrootte, veldGrootte, level1);
+        instance.setHuidigVeld(level1.getSpeelveld()[3][2]);
         instance.goLeft();
-        int expResult = 1*veldGrootte;
-        int result = instance.getX();
+        Veld expResult;
+        if (level1.getSpeelveld()[3][1].loopbaar()){
+            expResult = level1.getSpeelveld()[3][1];
+        }
+        else{
+            expResult = level1.getSpeelveld()[3][2];
+        }
+        Veld result = instance.getHuidigVeld();
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of keyPressed method, of class Scherm.
-     */
-    //@Test
-    public void testKeyPressed() {
-        System.out.println("keyPressed");
-        KeyEvent e = null;
-        Scherm instance = null;
-        instance.keyPressed(e);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of actionPerformed method, of class Scherm.
-     */
-    //@Test
-    public void testActionPerformed() {
-        System.out.println("actionPerformed");
-        ActionEvent e = null;
-        Scherm instance = null;
-        instance.actionPerformed(e);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
     
 }

@@ -24,9 +24,18 @@ public class Veld {
     private boolean oplossingVeld = false;
     private Level level;
     private final int veldGrootte = 40;
+    private int aantalSchoten;
 
     public Veld(){
         
+    }
+    
+    public void setAantalSchoten(int aantal){
+        aantalSchoten = aantal;
+    }
+    
+    public int getAantalSchoten(){
+        return aantalSchoten;
     }
     
     public void setOplossing(boolean b){

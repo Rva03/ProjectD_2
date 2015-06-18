@@ -19,6 +19,16 @@ public abstract class Muur extends Veld {
     }
     
     @Override
+    public void setAantalSchoten(int aantal){
+        super.setAantalSchoten(aantal);
+    }
+    
+    @Override
+    public int getAantalSchoten(){
+        return super.getAantalSchoten();
+    }
+    
+    @Override
     public boolean loopbaar(){
         return false;
     }

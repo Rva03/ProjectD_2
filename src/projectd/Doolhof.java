@@ -53,10 +53,10 @@ public class Doolhof {
             {2,0,1,0,0,0,1,0,1,1,0,2},
             {2,0,0,0,1,1,1,0,0,0,0,2},
             {2,0,1,0,0,0,0,0,1,1,0,2},
-            {2,0,1,0,1,1,1,0,1,0,0,2},
-            {2,0,1,0,1,0,0,0,0,1,0,2},
+            {2,0,1,0,1,1,1,0,3,0,0,2},
+            {2,0,1,0,3,0,0,0,0,1,0,2},
             {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,0,0,0,1,0,0,0,1,0,2},
+            {2,0,0,0,0,3,0,0,0,3,0,2},
             {2,2,2,2,2,2,2,2,2,2,2,2}
         };
         level1 = new Level(maze1, 12, 1);
@@ -66,12 +66,21 @@ public class Doolhof {
         vriend.setHuidigVeld(speelveld[8][10]);
         speelveld[8][10].setSpelObject(vriend);
         
-        Bazooka bazooka = new Bazooka();
-        bazooka.setHuidigVeld(speelveld[5][1]);
-        speelveld[5][1].setSpelObject(bazooka);
-        Bazooka bazooka2 = new Bazooka();
-        bazooka2.setHuidigVeld(speelveld[8][4]);
-        speelveld[8][4].setSpelObject(bazooka2);
+        int rand1;
+        int rand2;
+        for (int i = 0; i < 3; i++) {
+            do{
+                rand1 = (int)(Math.random()*12);
+                rand2 = (int)(Math.random()*10);
+                if (speelveld[rand2][rand1].loopbaar()){
+                    Bazooka bazooka = new Bazooka();
+                    if (speelveld[rand2][rand1].getSpelObject() == null && speelveld[rand2][rand1].getKarakter() == null){
+                        bazooka.setHuidigVeld(speelveld[rand2][rand1]);
+                        speelveld[rand2][rand1].setSpelObject(bazooka);
+                    }
+                }
+            }while (!speelveld[rand2][rand1].loopbaar());
+        }
         
         Munt munt1 = new Munt();
         munt1.setHuidigVeld(speelveld[5][3]);
@@ -99,13 +108,13 @@ public class Doolhof {
         int[][] maze1 = { 
             {2,2,2,2,2,2,2,2,2,2,2,2},
             {2,0,1,0,1,0,1,0,0,0,0,2},
-            {2,0,1,0,0,0,1,0,1,1,0,2},
+            {2,0,1,0,0,0,3,0,1,1,0,2},
             {2,0,0,0,1,1,1,0,0,0,0,2},
-            {2,0,1,0,0,0,0,0,0,1,1,2},
+            {2,0,1,0,0,0,0,0,0,1,3,2},
             {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,1,0,1,0,0,0,0,0,0,2},
+            {2,0,1,0,3,0,0,0,0,0,0,2},
             {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,0,0,1,0,0,0,0,1,0,2},
+            {2,0,0,0,3,0,0,0,0,3,0,2},
             {2,2,2,2,2,2,2,2,2,2,2,2}
         };
         level2 = new Level(maze1, 12, 2);
@@ -115,9 +124,21 @@ public class Doolhof {
         vriend.setHuidigVeld(speelveld[8][10]);
         speelveld[8][10].setSpelObject(vriend);
         
-        Bazooka bazooka = new Bazooka();
-        bazooka.setHuidigVeld(speelveld[5][1]);
-        speelveld[5][1].setSpelObject(bazooka);
+        int rand1;
+        int rand2;
+        for (int i = 0; i < 3; i++) {
+            do{
+                rand1 = (int)(Math.random()*12);
+                rand2 = (int)(Math.random()*10);
+                if (speelveld[rand2][rand1].loopbaar()){
+                    Bazooka bazooka = new Bazooka();
+                    if (speelveld[rand2][rand1].getSpelObject() == null && speelveld[rand2][rand1].getKarakter() == null){
+                        bazooka.setHuidigVeld(speelveld[rand2][rand1]);
+                        speelveld[rand2][rand1].setSpelObject(bazooka);
+                    }
+                }
+            }while (!speelveld[rand2][rand1].loopbaar());
+        }
         
         Munt munt1 = new Munt();
         munt1.setHuidigVeld(speelveld[5][3]);
@@ -145,13 +166,13 @@ public class Doolhof {
         int[][] maze1 = { 
             {2,2,2,2,2,2,2,2,2,2,2,2},
             {2,0,0,0,1,0,1,0,0,0,0,2},
-            {2,1,1,0,0,0,1,0,1,1,0,2},
+            {2,1,1,0,0,0,3,0,1,1,0,2},
             {2,0,0,0,1,1,1,0,0,0,0,2},
             {2,0,1,0,0,0,0,0,1,1,0,2},
-            {2,0,1,0,1,1,1,0,1,0,0,2},
-            {2,0,1,1,1,0,0,0,0,1,0,2},
+            {2,0,1,0,1,1,1,0,3,0,0,2},
+            {2,0,1,3,1,0,0,0,0,1,0,2},
             {2,0,1,0,1,1,1,0,1,1,0,2},
-            {2,0,1,0,0,0,0,0,0,1,0,2},
+            {2,0,3,0,0,0,0,0,0,3,0,2},
             {2,2,2,2,2,2,2,2,2,2,2,2}
         };
         level3 = new Level(maze1, 12, 3);
@@ -161,9 +182,21 @@ public class Doolhof {
         vriend.setHuidigVeld(speelveld[8][10]);
         speelveld[8][10].setSpelObject(vriend);
         
-        Bazooka bazooka = new Bazooka();
-        bazooka.setHuidigVeld(speelveld[5][1]);
-        speelveld[5][1].setSpelObject(bazooka);
+        int rand1;
+        int rand2;
+        for (int i = 0; i < 3; i++) {
+            do{
+                rand1 = (int)(Math.random()*12);
+                rand2 = (int)(Math.random()*10);
+                if (speelveld[rand2][rand1].loopbaar()){
+                    Bazooka bazooka = new Bazooka();
+                    if (speelveld[rand2][rand1].getSpelObject() == null && speelveld[rand2][rand1].getKarakter() == null){
+                        bazooka.setHuidigVeld(speelveld[rand2][rand1]);
+                        speelveld[rand2][rand1].setSpelObject(bazooka);
+                    }
+                }
+            }while (!speelveld[rand2][rand1].loopbaar());
+        }
         
         Munt munt1 = new Munt();
         munt1.setHuidigVeld(speelveld[5][3]);

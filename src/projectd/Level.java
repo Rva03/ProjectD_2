@@ -31,7 +31,10 @@ public class Level extends JPanel{
                     velden.add(new RandMuur(j, i, this));
                 }
                 else if (maze[i][j] == 1){
-                    velden.add(new NormaleMuur(j, i, this));
+                    velden.add(new NormaleMuur(j, i, this, 1));
+                }
+                else if (maze[i][j] == 3){
+                    velden.add(new NormaleMuur(j, i, this, 2));
                 }
                 else {
                     velden.add(new LoopVeld(j, i, this));
