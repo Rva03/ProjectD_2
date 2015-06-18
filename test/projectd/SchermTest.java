@@ -68,7 +68,10 @@ public class SchermTest {
     @Test
     public void testUp() {
         instance.setHuidigVeld(level1.getSpeelveld()[2][1]);
-        instance.goUp();
+        int code = KeyEvent.VK_UP;
+        if (code == KeyEvent.VK_UP){
+            instance.goUp();
+        }
         Veld expResult;
         if (level1.getSpeelveld()[1][1].loopbaar()){
             expResult = level1.getSpeelveld()[1][1];
@@ -86,7 +89,10 @@ public class SchermTest {
     @Test
     public void testDown() {
         instance.setHuidigVeld(level1.getSpeelveld()[2][1]);
-        instance.goDown();
+        int code = KeyEvent.VK_DOWN;
+        if (code == KeyEvent.VK_DOWN){
+            instance.goDown();
+        }
         Veld expResult;
         if (level1.getSpeelveld()[3][1].loopbaar()){
             expResult = level1.getSpeelveld()[3][1];
@@ -104,7 +110,10 @@ public class SchermTest {
     @Test
     public void testRight() {
         instance.setHuidigVeld(level1.getSpeelveld()[3][1]);
-        instance.goRight();
+        int code = KeyEvent.VK_RIGHT;
+        if (code == KeyEvent.VK_RIGHT){
+            instance.goRight();
+        }
         Veld expResult;
         if (level1.getSpeelveld()[3][2].loopbaar()){
             expResult = level1.getSpeelveld()[3][2];
@@ -122,7 +131,10 @@ public class SchermTest {
     @Test
     public void testLeft() {
         instance.setHuidigVeld(level1.getSpeelveld()[3][2]);
-        instance.goLeft();
+        int code = KeyEvent.VK_LEFT;
+        if (code == KeyEvent.VK_LEFT){
+            instance.goLeft();
+        }
         Veld expResult;
         if (level1.getSpeelveld()[3][1].loopbaar()){
             expResult = level1.getSpeelveld()[3][1];
@@ -134,6 +146,4 @@ public class SchermTest {
         assertEquals(expResult, result);
     }
 
-    
-    
 }
